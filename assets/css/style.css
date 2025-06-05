@@ -2851,7 +2851,7 @@ textarea.is-invalid {
 
 .title-area .sub-title.style2 {
   padding: 0;
-  margin-top: 4px;
+  margin-top: 80px;
 }
 
 .title-area .sub-title.style2:before, .title-area .sub-title.style2:after {
@@ -7736,6 +7736,8 @@ blockquote cite,
 
 .blog-img img {
   width: 100%;
+  height: 190px;
+  object-fit: cover;
 }
 
 .blog-single {
@@ -21736,7 +21738,7 @@ span.select2-selection.select2-selection--single:focus {
 
 @media (max-width: 575px) {
   .img-box8 .year-counter {
-    left: -10%;
+    left: -35%;
   }
 }
 
