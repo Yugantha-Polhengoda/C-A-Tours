@@ -7736,6 +7736,8 @@ blockquote cite,
 
 .blog-img img {
   width: 100%;
+  height: 190px;
+  object-fit: cover;
 }
 
 .blog-single {
