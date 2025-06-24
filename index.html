@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>C&A TOURS AND TAXI - Your Trusted Travel Partner in Sri Lanka</title>
-    <meta name="author" content="Taxiar">
-    <meta name="description" content="Taxiar - Online Taxi Service HTML Template">
-    <meta name="keywords" content="Taxiar - Online Taxi Service HTML Template">
+    <title>C&A TOURS AND TAXI - Your Trusted Travel Partner in Sri Lanka | Taxi & Tourism Services</title>
+    <meta name="author" content="C&A Tours and Taxi">
+    <meta name="description" content="C&A Tours and Taxi - Professional Taxi Services and Comprehensive Tourism Packages in Sri Lanka. Airport transfers, city rides, and guided tours to all major attractions.">
+    <meta name="keywords" content="Sri Lanka taxi, Sri Lanka tours, airport transfer, tourism packages, Sigiriya tours, Kandy tours, Galle tours, wildlife safari">
     <meta name="robots" content="INDEX,FOLLOW">
 
     <!-- Mobile Specific Metas -->
@@ -56,6 +56,333 @@
     <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Custom Tour Package Styles -->
+    <style>
+        .icon-logo {
+            height: 30px;
+            width: 30px;
+        }
+        .service-card.style3 {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card.style3:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-card_img {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .service-card_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card.style3:hover .service-card_img img {
+            transform: scale(1.1);
+        }
+        
+        .service-card_overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--theme-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        .service-card_content {
+            padding: 30px 25px;
+        }
+        
+        .service-card_title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .service-card_text {
+            color: var(--theme-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .service-features li i {
+            color: var(--theme-color);
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        
+        .service-card_price {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .price-text {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--theme-color);
+            line-height: 1;
+        }
+        
+        .price-per {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .th-btn.radius-btn.w-100 {
+            width: 100% !important;
+        }
+        
+                 /* Responsive adjustments */
+         @media (max-width: 768px) {
+             .service-card_img {
+                 height: 200px;
+             }
+             
+             .service-card_content {
+                 padding: 20px;
+             }
+             
+             .service-card_title {
+                 font-size: 20px;
+             }
+         }
+         
+         /* Tourism Feature Cards */
+         .feature-card.style-tourism {
+             background: rgba(255, 255, 255, 0.95);
+             border-radius: 20px;
+             padding: 40px 30px;
+             text-align: center;
+             transition: all 0.3s ease;
+             height: 100%;
+             backdrop-filter: blur(10px);
+             border: 1px solid rgba(255, 255, 255, 0.2);
+         }
+         
+         .feature-card.style-tourism:hover {
+             transform: translateY(-10px);
+             background: rgba(255, 255, 255, 1);
+             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+         }
+         
+         .feature-card_icon {
+             width: 80px;
+             height: 80px;
+             margin: 0 auto 25px;
+             background: var(--theme-color);
+             border-radius: 50%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             font-size: 32px;
+             color: #fff;
+             transition: all 0.3s ease;
+         }
+         
+         .feature-card.style-tourism:hover .feature-card_icon {
+             transform: scale(1.1);
+             background: #ff6b35;
+         }
+         
+         .feature-card_title {
+             font-size: 22px;
+             font-weight: 700;
+             margin-bottom: 15px;
+             color: #1a1a1a;
+         }
+         
+         .feature-card_text {
+             color: #666;
+             line-height: 1.6;
+             font-size: 14px;
+         }
+         
+         /* Destination Gallery Styles */
+         .destination-card {
+             position: relative;
+             border-radius: 20px;
+             overflow: hidden;
+             height: 300px;
+             cursor: pointer;
+             transition: all 0.3s ease;
+         }
+         
+         .destination-card.large {
+             height: 620px;
+         }
+         
+         .destination-card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+         }
+         
+         .destination-img {
+             width: 100%;
+             height: 100%;
+             position: relative;
+             overflow: hidden;
+         }
+         
+         .destination-img img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             transition: transform 0.3s ease;
+         }
+         
+         .destination-card:hover .destination-img img {
+             transform: scale(1.1);
+         }
+         
+         .destination-overlay {
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: linear-gradient(45deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+             display: flex;
+             align-items: flex-end;
+             padding: 30px;
+             transition: all 0.3s ease;
+         }
+         
+         .destination-card:hover .destination-overlay {
+             background: linear-gradient(45deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+         }
+         
+         .destination-content {
+             color: #fff;
+         }
+         
+         .destination-category {
+             display: inline-block;
+             background: var(--theme-color);
+             color: #fff;
+             padding: 6px 15px;
+             border-radius: 25px;
+             font-size: 12px;
+             font-weight: 600;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+             margin-bottom: 15px;
+         }
+         
+         .destination-title {
+             font-size: 28px;
+             font-weight: 700;
+             margin-bottom: 10px;
+             color: #fff;
+         }
+         
+         .destination-desc {
+             font-size: 16px;
+             margin-bottom: 15px;
+             opacity: 0.9;
+         }
+         
+         .destination-features {
+             display: flex;
+             gap: 20px;
+             flex-wrap: wrap;
+         }
+         
+         .destination-features span {
+             font-size: 14px;
+             opacity: 0.8;
+             display: flex;
+             align-items: center;
+             gap: 8px;
+         }
+         
+         .destination-features i {
+             font-size: 12px;
+         }
+         
+         /* Responsive Design */
+         @media (max-width: 992px) {
+             .destination-card.large {
+                 height: 400px;
+             }
+             
+             .feature-card.style-tourism {
+                 padding: 30px 20px;
+             }
+             
+             .feature-card_icon {
+                 width: 70px;
+                 height: 70px;
+                 font-size: 28px;
+             }
+         }
+         
+         @media (max-width: 768px) {
+             .destination-card {
+                 height: 250px;
+             }
+             
+             .destination-card.large {
+                 height: 300px;
+             }
+             
+             .destination-overlay {
+                 padding: 20px;
+             }
+             
+             .destination-title {
+                 font-size: 22px;
+             }
+             
+             .feature-card.style-tourism {
+                 padding: 25px 15px;
+             }
+         }
+     </style>
 
 </head>
 
@@ -106,7 +433,7 @@
             <button class="th-menu-toggle "><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
                 <a href="index.html">
-                    <img src="assets/img/logo.svg" alt="Taxiar">
+                    <img src="assets/img/logo.svg" alt="C&A Tour and Taxi">
                 </a>
             </div>
             <div class="th-mobile-menu">
@@ -118,13 +445,16 @@
                         <a href="#about-sec">About Us</a>
                     </li>
                     <li>
-                        <a href="#services-area">Service</a>
+                        <a href="#services-area">Taxi Services</a>
+                    </li>
+                    <li>
+                        <a href="#tour-packages">Tour Packages</a>
                     </li>
                     <li>
                         <a href="#booking-area">Contact</a>
                     </li>
                     <li>
-                        <a href="#blog-area">Blog</a>
+                        <a href="#blog-area">Destinations</a>
                     </li>
                 </ul>
             </div>
@@ -312,7 +642,7 @@
                             <div class="header-logo">
                                 <a href="index.html" class="logo">
                                     <div>
-                                        <img class="logo-icon" src="assets/img/log.png" alt="logo-bg"/>
+                                        <img class="logo-icon" src="assets/img//logo1.png" alt="logo-bg"/>
                                     </div>
                                     <div>
                                         <span class="logo-text anton-regular">
@@ -332,13 +662,16 @@
                                         <a href="#about-sec">About Us</a>
                                     </li>
                                     <li>
-                                        <a href="#services-area">Service</a>
+                                        <a href="#services-area">Taxi Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tour-packages">Tour Packages</a>
                                     </li>
                                     <li>
                                         <a href="#booking-area">Contact</a>
                                     </li>
                                     <li>
-                                        <a href="#blog-area">Blog</a>
+                                        <a href="#blog-area">Destinations</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -352,7 +685,7 @@
                                 </a> -->
                                 <a href="#" class="icon-btn sideMenuToggler"><i class="far fa-bars"></i></a>
 
-                                <a href="#booking-area" target="_blank" class="th-btn radius-btn">BOOK A TAXI<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                                <a href="#booking-area" class="th-btn radius-btn">BOOK NOW<i class="fa-regular fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -368,7 +701,7 @@ Hero Area
         <div class="hero-slider-8 th-carousel" id="heroSlide8" data-slide-show="1" data-md-slide-show="1" data-fade="true">
 
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/hero/taxi7.png">
+                <div class="th-hero-bg" data-bg-src="assets/img/hero/1.jpg">
                     <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
                 </div>
                 <div class="container">
@@ -376,10 +709,10 @@ Hero Area
                         <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
                             <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
                         </div>
-                        <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Need a Ride? Call </h1>
+                        <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Explore Sri Lanka with </h1>
                         <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">
-                            us anytime!</h1>
-                        <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">Online taxi service is a convenient and affordable way to travel within a city or to nearby destinations. You can book a cab online through various platforms.</p>
+                            Comfort & Style!</h1>
+                        <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">Professional taxi services and comprehensive tourism packages. From airport transfers to guided tours of ancient temples, pristine beaches, and wildlife safaris - we make your Sri Lankan journey unforgettable.</p>
                         <div class="btn-group" data-ani="slideinup" data-ani-delay="0.7s">
                             <a href="#services-area" class="th-btn style3 radius-btn"><span class="btn-text">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
                             <a href="tel:+94715739188" class="th-btn style2 radius-btn"><span class="btn-text">Call Now<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
@@ -389,7 +722,7 @@ Hero Area
             </div>
 
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/hero/hero_bg_8_3.jpg">
+                <div class="th-hero-bg" data-bg-src="assets/img/hero/3.jpg">
                     <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
                 </div>
                 <div class="container">
@@ -397,10 +730,10 @@ Hero Area
                         <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
                             <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
                         </div>
-                        <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">A different kind of </h1>
+                        <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Discover the Pearl of </h1>
                         <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">
-                            taxi company</h1>
-                        <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">After reaching the destination, passengers have the option to rate their experience and provide feedback on the driver and overall service.</p>
+                            the Indian Ocean</h1>
+                        <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">Experience Sri Lanka's rich heritage with our customized tour packages. Visit ancient Sigiriya, explore tea plantations in Nuwara Eliya, witness wildlife in Yala, and relax on pristine beaches.</p>
                         <div class="btn-group" data-ani="slideinup" data-ani-delay="0.7s">
                             <a href="about.html" class="th-btn style3 radius-btn"><span class="btn-text">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
                             <a href="tel:+468254762443" class="th-btn style2 radius-btn"><span class="btn-text">Call Now<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
@@ -410,7 +743,7 @@ Hero Area
             </div>
 
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/hero/hero_bg_8_1.jpg">
+                <div class="th-hero-bg" data-bg-src="assets/img/hero/2.jpg">
                     <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
                 </div>
                 <div class="container">
@@ -418,10 +751,10 @@ Hero Area
                         <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
                             <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
                         </div>
-                        <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">The Best Way To Get. </h1>
+                        <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Your Complete Travel </h1>
                         <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">
-                            Around Town</h1>
-                        <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">These services operate in numerous countries and often offer additional features like carpooling, premium vehicles, and food delivery.</p>
+                            Solution</h1>
+                        <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">From comfortable airport transfers to comprehensive tour packages, we provide everything you need for an amazing Sri Lankan adventure. Professional drivers, modern vehicles, and unforgettable experiences.</p>
                         <div class="btn-group" data-ani="slideinup" data-ani-delay="0.7s">
                             <a href="about.html" class="th-btn style3 radius-btn"><span class="btn-text">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
                             <a href="tel:+468254762443" class="th-btn style2 radius-btn"><span class="btn-text">Call Now<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
@@ -436,108 +769,207 @@ Hero Area
         </div>
     </div>
     <!--==============================
-About Area  
+Booking Area  
 ==============================-->
-    <section class="space-top" id="about-sec">
+    <div class="booking-section">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-6 mb-40 mb-xl-0">
-                    <div class="img-box8 wow fadeInLeft">
-                        <div class="img1">
-                            <img src="assets/img/hero/taxi5.png" alt="Professional Taxi Service in Sri Lanka">
-                        </div>
-                        <div class="year-counter">
-                            <div class="year-counter_number">15+</div>
-                            <div class="media-body"><span class="year-counter_title">Years Serving Sri Lanka</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 wow fadeInRight">
-                    <div class="title-area mb-35">
-                        <span class="sub-title style2"><img src="assets/img/shape/title_shape_1.svg" alt="shape"><span class="sub-title2">ABOUT OUR COMPANY</span></span>
-                        <h2 class="sec-title">Your Trusted Travel Partner in Sri Lanka</h2>
-                        <p class="mb-20">With over 15 years of experience, C&A Tours has been providing reliable and comfortable transportation services across Sri Lanka. We take pride in our professional drivers, well-maintained vehicles, and commitment to customer satisfaction.</p>
-                    </div>
-                    <div class="about-feature-wrap style2">
-                        <div class="about-feature">
-                            <div class="about-icon">
-                                <img src="assets/img/icon/about-feature_1.svg" alt="Icon">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="about_title">Safe & Reliable</h3>
-                                <p class="about_text">Your safety is our top priority. Our vehicles are regularly maintained and our drivers are carefully vetted professionals with extensive local knowledge.</p>
-                            </div>
-                        </div>
-                        <div class="about-feature">
-                            <div class="about_icon">
-                                <img src="assets/img/icon/about-feature_2.svg" alt="Icon">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="about_title">Local Experts</h3>
-                                <p class="about_text">Our drivers are not just drivers - they're local experts who can share insights about Sri Lanka's culture, history, and hidden gems.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn-group style2">
-                        <a href="about.html" class="th-btn radius-btn">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <span class="about-call-text"> <a href="tel:+94767801452" class="about-call-btn"><i class="fa-solid fa-phone"></i></a>+94 71 573 9188</span>
-                    </div>
-                </div>
-            </div>
+                         <form onsubmit="return submitHeroBooking(event)" class="booking-form ajax-contact wow fadeInUp">
+                 <div class="input-wrap">
+                     <div class="row">
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="form-control" name="name" id="hero-name" placeholder="Your Name" required>
+                             <i class="fa-light fa-user"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="number" class="form-control" name="phone" id="hero-phone"
+                                 placeholder="Phone Number" required>
+                             <i class="fa-light fa-phone-rotary"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <select name="passenger" id="hero-passenger" class="form-select nice-select">
+                                 <option value="" disabled selected hidden>passenger</option>
+                                 <option value="1">1 passenger</option>
+                                 <option value="2">2 passengers</option>
+                                 <option value="3">3 passengers</option>
+                                 <option value="4">4 passengers</option>
+                                 <option value="5+">5+ passengers</option>
+                             </select>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="form-control" name="s-destination" id="hero-s-destination"
+                                 placeholder="Start Destination" required>
+                             <i class="fa-sharp fa-regular fa-location-dot"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="form-control" name="e-destination" id="hero-e-destination"
+                                 placeholder="End Destination" required>
+                             <i class="fa-sharp fa-regular fa-location-dot"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="date-pick form-control" name="date" id="hero-date-pick"
+                                 placeholder="Select Date" required>
+                             <i class="fa-light fa-calendar-days"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="time-pick form-control" name="time" id="hero-time-pick"
+                                 placeholder="Select Time">
+                             <i class="fa-light fa-clock"></i>
+                         </div>
+                         <div class="form-btn col-xl-3 col-lg-4 col-sm-6">
+                             <button type="submit" class="th-btn">Book Taxi Now <i class="fa-regular fa-arrow-right"></i></button>
+                         </div>
+                     </div>
+                     <p class="form-messages mb-0 mt-3"></p>
+                 </div>
+             </form>
         </div>
-    </section>
+    </div>
+
     <!--==============================
-Counter Area  
+Destinations Gallery Area  
 ==============================-->
-    <section class="space">
+    <section class="space" id="destinations-gallery">
         <div class="container">
-            <div class="counter-wrap style3">
-                <div class="counter-line"></div>
-                <div class="row gy-40">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-card style3 wow fadeInUp">
-                            <div class="counter-card_icon" data-bg-src="assets/img/shape/counter_shape.png">
-                                <img src="assets/img/icon/counter_3_1.svg" alt="icon">
+            <div class="title-area text-center">
+                <span class="sub-title style2">
+                    <img src="assets/img/logo1.png" class="icon-logo" alt="shape">
+                    <span class="sub-title2">MUST-VISIT DESTINATIONS</span>
+                </span>
+                <h2 class="sec-title">Explore Sri Lanka's Most Iconic Places</h2>
+                <p class="sec-text">From ancient wonders to natural beauty, discover the diverse attractions that make Sri Lanka a world-class destination</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="destination-card large wow fadeInUp">
+                        <div class="destination-img">
+                            <img src="assets/img/blog/sigiriya.jpg" alt="Sigiriya Rock Fortress">
+                            <div class="destination-overlay">
+                                <div class="destination-content">
+                                    <span class="destination-category">UNESCO World Heritage</span>
+                                    <h3 class="destination-title">Sigiriya Rock Fortress</h3>
+                                    <p class="destination-desc">Ancient rock citadel with stunning frescoes and breathtaking views</p>
+                                    <div class="destination-features">
+                                        <span><i class="fas fa-map-marker-alt"></i> Central Province</span>
+                                        <span><i class="fas fa-clock"></i> 3-4 hours</span>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="counter-card_number"><span class="counter-number">32.5</span>k<span class="counter-plus">+</span>
-                            </h3>
-                            <p class="counter-card_text">Special Vehicles</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-card style3 wow fadeInUp">
-                            <div class="counter-card_icon" data-bg-src="assets/img/shape/counter_shape.png">
-                                <img src="assets/img/icon/counter_3_2.svg" alt="icon">
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="destination-card wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="destination-img">
+                                    <img src="assets/img/blog/Kandy-tooth-temple.jpg" alt="Temple of the Tooth Kandy">
+                                    <div class="destination-overlay">
+                                        <div class="destination-content">
+                                            <span class="destination-category">Sacred Site</span>
+                                            <h3 class="destination-title">Temple of the Tooth</h3>
+                                            <p class="destination-desc">Most sacred Buddhist temple in Sri Lanka</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="counter-card_number"><span class="counter-number">13.8</span>k<span class="counter-plus">+</span>
-                            </h3>
-                            <p class="counter-card_text">People Pickup</p>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <div class="destination-card wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="destination-img">
+                                    <img src="assets/img/blog/ella.jpg" alt="Ella Nine Arch Bridge">
+                                    <div class="destination-overlay">
+                                        <div class="destination-content">
+                                            <span class="destination-category">Hill Country</span>
+                                            <h3 class="destination-title">Ella</h3>
+                                            <p class="destination-desc">Scenic beauty & railway heritage</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <div class="destination-card wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="destination-img">
+                                    <img src="assets/img/blog/yala.jpg" alt="Yala National Park">
+                                    <div class="destination-overlay">
+                                        <div class="destination-content">
+                                            <span class="destination-category">Wildlife</span>
+                                            <h3 class="destination-title">Yala Safari</h3>
+                                            <p class="destination-desc">Leopard & elephant spotting</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-card style3 wow fadeInUp">
-                            <div class="counter-card_icon" data-bg-src="assets/img/shape/counter_shape.png">
-                                <img src="assets/img/icon/counter_3_3.svg" alt="icon">
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="destination-card wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="destination-img">
+                            <img src="assets/img/blog/gallefort.jpg" alt="Galle Fort">
+                            <div class="destination-overlay">
+                                <div class="destination-content">
+                                    <span class="destination-category">Colonial Heritage</span>
+                                    <h3 class="destination-title">Galle Fort</h3>
+                                    <p class="destination-desc">Dutch colonial architecture meets ocean views</p>
+                                    <div class="destination-features">
+                                        <span><i class="fas fa-map-marker-alt"></i> Southern Coast</span>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="counter-card_number"><span class="counter-number">26.6</span>k<span class="counter-plus">+</span>
-                            </h3>
-                            <p class="counter-card_text">Road Trips Done</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-card style3 wow fadeInUp">
-                            <div class="counter-card_icon" data-bg-src="assets/img/shape/counter_shape.png">
-                                <img src="assets/img/icon/counter_3_4.svg" alt="icon">
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="destination-card wow fadeInUp" data-wow-delay="1s">
+                        <div class="destination-img">
+                            <img src="assets/img/blog/little-england.jpg" alt="Nuwara Eliya">
+                            <div class="destination-overlay">
+                                <div class="destination-content">
+                                    <span class="destination-category">Tea Country</span>
+                                    <h3 class="destination-title">Nuwara Eliya</h3>
+                                    <p class="destination-desc">Little England with tea plantations and cool climate</p>
+                                    <div class="destination-features">
+                                        <span><i class="fas fa-thermometer-half"></i> 16°C avg</span>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="counter-card_number"><span class="counter-number">65.2</span>k<span class="counter-plus">+</span>
-                            </h3>
-                            <p class="counter-card_text">Satisfied Clients</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="destination-card wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="destination-img">
+                            <img src="assets/img/blog/mirissa.jpg" alt="Mirissa Beach">
+                            <div class="destination-overlay">
+                                <div class="destination-content">
+                                    <span class="destination-category">Beach Paradise</span>
+                                    <h3 class="destination-title">Mirissa Beach</h3>
+                                    <p class="destination-desc">Whale watching and pristine golden sands</p>
+                                    <div class="destination-features">
+                                        <span><i class="fas fa-swimmer"></i> Swimming</span>
+                                        <span><i class="fas fa-fish"></i> Whale Watching</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="text-center mt-50">
+                <a href="#tour-packages" class="th-btn style3 radius-btn">Explore All Destinations<i class="fa-regular fa-arrow-right ms-2"></i></a>
+            </div>
         </div>
     </section>
+    
     <!--==============================
 Taxi Area  
 ==============================-->
@@ -546,7 +978,7 @@ Taxi Area
             <div class="row align-items-center justify-content-center">
                 <div class="col-xl-7 col-xxl-6 wow fadeInLeft">
                     <div class="title-area">
-                        <span class="sub-title style2"><img src="assets/img/shape/title_shape_1.svg" alt="shape"><span class="sub-title2">WHY CHOOSE US</span></span>
+                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">WHY CHOOSE US</span></span>
                         <h2 class="sec-title">Your Trusted Taxi Service in Sri Lanka</h2>
                     </div>
                     <div class="taxi-tabs-wrapper">
@@ -626,6 +1058,199 @@ Taxi Area
         </div>
     </section>
     <!--==============================
+Tour Packages Area  
+==============================-->
+    <section class="space" id="tour-packages">
+        <div class="container">
+            <div class="title-area text-center">
+                <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">EXPLORE SRI LANKA</span></span>
+                <h2 class="sec-title">Our Popular Tour Packages</h2>
+                <p class="sec-text">Discover the beauty and culture of Sri Lanka with our carefully crafted tour packages. From ancient cities to pristine beaches, we cover all the must-visit destinations.</p>
+            </div>
+            
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card style3 wow fadeInUp">
+                        <div class="service-card_img">
+                            <img src="assets/img/blog/sigiriya.jpg" alt="Cultural Triangle Tour">
+                            <div class="service-card_overlay">
+                                <div class="service-card_icon">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-card_content">
+                            <h3 class="service-card_title">Cultural Triangle Tour</h3>
+                            <p class="service-card_text">3 Days / 2 Nights</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Sigiriya Rock Fortress</li>
+                                <li><i class="fas fa-check"></i> Dambulla Cave Temple</li>
+                                <li><i class="fas fa-check"></i> Polonnaruwa Ancient City</li>
+                                <li><i class="fas fa-check"></i> Professional Guide</li>
+                            </ul>
+                            <div class="service-card_price">
+                                <span class="price-text">Starting from</span>
+                                <span class="price">$299</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card style3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-card_img">
+                            <img src="assets/img/blog/little-england.jpg" alt="Hill Country Adventure">
+                            <div class="service-card_overlay">
+                                <div class="service-card_icon">
+                                    <i class="fas fa-mountain"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-card_content">
+                            <h3 class="service-card_title">Hill Country Adventure</h3>
+                            <p class="service-card_text">4 Days / 3 Nights</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Nuwara Eliya Tea Plantations</li>
+                                <li><i class="fas fa-check"></i> Ella Nine Arch Bridge</li>
+                                <li><i class="fas fa-check"></i> Horton Plains National Park</li>
+                                <li><i class="fas fa-check"></i> Train Journey Experience</li>
+                            </ul>
+                            <div class="service-card_price">
+                                <span class="price-text">Starting from</span>
+                                <span class="price">$399</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card style3 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-card_img">
+                            <img src="assets/img/blog/yala.jpg" alt="Wildlife Safari">
+                            <div class="service-card_overlay">
+                                <div class="service-card_icon">
+                                    <i class="fas fa-paw"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-card_content">
+                            <h3 class="service-card_title">Wildlife Safari Package</h3>
+                            <p class="service-card_text">3 Days / 2 Nights</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Yala National Park Safari</li>
+                                <li><i class="fas fa-check"></i> Udawalawe Elephant Park</li>
+                                <li><i class="fas fa-check"></i> Bird Watching Tours</li>
+                                <li><i class="fas fa-check"></i> Nature Photography</li>
+                            </ul>
+                            <div class="service-card_price">
+                                <span class="price-text">Starting from</span>
+                                <span class="price">$349</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card style3 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-card_img">
+                            <img src="assets/img/blog/mirissa.jpg" alt="Beach Paradise">
+                            <div class="service-card_overlay">
+                                <div class="service-card_icon">
+                                    <i class="fas fa-umbrella-beach"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-card_content">
+                            <h3 class="service-card_title">Beach Paradise Tour</h3>
+                            <p class="service-card_text">5 Days / 4 Nights</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Mirissa Whale Watching</li>
+                                <li><i class="fas fa-check"></i> Unawatuna Beach</li>
+                                <li><i class="fas fa-check"></i> Galle Fort Exploration</li>
+                                <li><i class="fas fa-check"></i> Water Sports Activities</li>
+                            </ul>
+                            <div class="service-card_price">
+                                <span class="price-text">Starting from</span>
+                                <span class="price">$449</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card style3 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="service-card_img">
+                            <img src="assets/img/blog/Kandy-tooth-temple.jpg" alt="Spiritual Journey">
+                            <div class="service-card_overlay">
+                                <div class="service-card_icon">
+                                    <i class="fas fa-pray"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-card_content">
+                            <h3 class="service-card_title">Spiritual Journey</h3>
+                            <p class="service-card_text">3 Days / 2 Nights</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Temple of the Tooth - Kandy</li>
+                                <li><i class="fas fa-check"></i> Adam's Peak Pilgrimage</li>
+                                <li><i class="fas fa-check"></i> Ancient Buddhist Temples</li>
+                                <li><i class="fas fa-check"></i> Meditation Sessions</li>
+                            </ul>
+                            <div class="service-card_price">
+                                <span class="price-text">Starting from</span>
+                                <span class="price">$279</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card style3 wow fadeInUp" data-wow-delay="1s">
+                        <div class="service-card_img">
+                            <img src="assets/img/blog/gallefort.jpg" alt="Grand Island Tour">
+                            <div class="service-card_overlay">
+                                <div class="service-card_icon">
+                                    <i class="fas fa-globe-asia"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-card_content">
+                            <h3 class="service-card_title">Grand Island Tour</h3>
+                            <p class="service-card_text">10 Days / 9 Nights</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Complete Island Coverage</li>
+                                <li><i class="fas fa-check"></i> All Major Attractions</li>
+                                <li><i class="fas fa-check"></i> Cultural Experiences</li>
+                                <li><i class="fas fa-check"></i> Wildlife & Nature</li>
+                            </ul>
+                            <div class="service-card_price">
+                                <span class="price-text">Starting from</span>
+                                <span class="price">$1299</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-50">
+                <p class="mb-3"><strong>All packages include:</strong> Professional English-speaking driver/guide, comfortable air-conditioned vehicle, entrance fees, and hotel recommendations.</p>
+                <a href="#booking-area" class="th-btn style3 radius-btn">Customize Your Tour<i class="fa-regular fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+    <!--==============================
 Booking Area  
 ==============================-->
     <div class="position-relative overflow-hidden bg-top-center space" data-bg-src="assets/img/bg/booking_bg_1.jpg" id="booking-area">
@@ -633,7 +1258,7 @@ Booking Area
             <div class="row">
                 <div class="col-xl-6 wow fadeInLeft">
                     <div class="title-area text-center text-xl-start">
-                        <span class="sub-title style2"><img src="assets/img/shape/title_shape_1_1.svg" alt="shape"><span class="sub-title2">Taxi Booking Form</span></span>
+                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">Taxi Booking Form</span></span>
                         <h2 class="sec-title text-white">Book Your Taxi Online</h2>
                         <p class="booking-text">Book your taxi ride in just a few taps. Our reliable service is available 24/7 across Sri Lanka. For immediate assistance, message us on WhatsApp.</p>
                     </div>
@@ -668,40 +1293,87 @@ Booking Area
                 </div>
                 <div class="col-xl-6">
                     <form onsubmit="return submitToWhatsApp(event)" class="booking-form4 wow fadeInUp" data-bg-src="assets/img/shape/booking_shape.png">
-                        <h3>Book Taxi Now</h3>
+                        <h3>Book Your Service</h3>
                         <div class="row">
+                            <div class="form-group col-12">
+                                <select name="service-type" id="service-type" class="form-select nice-select" onchange="toggleFormFields()">
+                                    <option value="" disabled selected hidden>Select Service Type</option>
+                                    <option value="taxi">Taxi Service</option>
+                                    <option value="tour">Tour Package</option>
+                                </select>
+                                <i class="fa-light fa-list"></i>
+                            </div>
                             <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="text" id="text" placeholder="Your Name">
+                                <input type="text" class="form-control" name="text" id="text" placeholder="Your Name" required>
                                 <i class="fa-light fa-user"></i>
                             </div>
                             <div class="form-group col-sm-6">
-                                <input type="number" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+                                <input type="number" class="form-control" name="phone" id="phone" placeholder="Phone Number" required>
                                 <i class="fa-light fa-phone-rotary"></i>
                             </div>
                             <div class="form-group col-12">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                                <i class="fa-light fa-envelope"></i>
+                            </div>
+                            <div class="form-group col-12">
                                 <select name="passenger" id="passenger" class="form-select nice-select">
-                                    <option value="" disabled selected hidden>passenger</option>
-                                    <option value="passenger1">passenger 1</option>
-                                    <option value="passenger2">passenger 2</option>
-                                    <option value="passenger3">passenger 3</option>
-                                    <option value="passenger4">passenger 4</option>
+                                    <option value="" disabled selected hidden>Number of Passengers</option>
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2">2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4">4 Passengers</option>
+                                    <option value="5+">5+ Passengers</option>
                                 </select>
                             </div>
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="s-destination" id="s-destination" placeholder="Start Destination">
-                                <i class="fa-sharp fa-regular fa-location-dot"></i>
+                            
+                            <!-- Taxi Service Fields -->
+                            <div id="taxi-fields" style="display: none; width: 100%;">
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <input type="text" class="form-control" name="s-destination" id="s-destination" placeholder="Pickup Location">
+                                        <i class="fa-sharp fa-regular fa-location-dot"></i>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <input type="text" class="form-control" name="e-destination" id="e-destination" placeholder="Drop-off Location">
+                                        <i class="fa-sharp fa-regular fa-location-dot"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="e-destination" id="e-destination" placeholder="End Destination">
-                                <i class="fa-sharp fa-regular fa-location-dot"></i>
+                            
+                            <!-- Tour Package Fields -->
+                            <div id="tour-fields" style="display: none; width: 100%;">
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <select name="tour-package" id="tour-package" class="form-select nice-select">
+                                            <option value="" disabled selected hidden>Select Tour Package</option>
+                                            <option value="cultural-triangle">Cultural Triangle Tour - 3D/2N</option>
+                                            <option value="hill-country">Hill Country Adventure - 4D/3N</option>
+                                            <option value="wildlife-safari">Wildlife Safari Package - 3D/2N</option>
+                                            <option value="beach-paradise">Beach Paradise Tour - 5D/4N</option>
+                                            <option value="spiritual-journey">Spiritual Journey - 3D/2N</option>
+                                            <option value="grand-island">Grand Island Tour - 10D/9N</option>
+                                            <option value="custom">Custom Tour Package</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <input type="text" class="form-control" name="tour-duration" id="tour-duration" placeholder="Preferred Duration (e.g., 5 days)">
+                                        <i class="fa-light fa-calendar-week"></i>
+                                    </div>
+                                </div>
                             </div>
+                            
                             <div class="form-group col-sm-6">
-                                <input type="text" class="date-pick form-control" name="date" id="date-pick" placeholder="Select Date">
+                                <input type="text" class="date-pick form-control" name="date" id="date-pick" placeholder="Select Date" required>
                                 <i class="fa-light fa-calendar-days"></i>
                             </div>
                             <div class="form-group col-sm-6">
                                 <input type="text" class="time-pick form-control" name="time" id="time-pick" placeholder="Select Time">
                                 <i class="fa-light fa-clock"></i>
+                            </div>
+                            
+                            <div class="form-group col-12">
+                                <textarea class="form-control" name="special-requests" id="special-requests" rows="3" placeholder="Special Requests or Additional Information"></textarea>
+                                <i class="fa-light fa-message"></i>
                             </div>
 
                             <div class="form-btn col-12">
@@ -720,7 +1392,7 @@ Process Area
     <section class="position-relative overflow-hidden space-bottom">
         <div class="container">
             <div class="title-area text-center">
-                <span class="sub-title style2"><img src="assets/img/shape/title_shape_1.svg" alt="shape"><span class="sub-title2">Our Working Process</span></span>
+                <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">Our Working Process</span></span>
                 <h2 class="sec-title">Our Basic Work Process</h2>
             </div>
             <div class="process-box-wrapper style2">
@@ -773,8 +1445,8 @@ Testimonial Area
             <div class="row justify-content-center justify-content-lg-between align-items-center">
                 <div class="col-lg-8">
                     <div class="title-area text-center text-lg-start">
-                        <span class="sub-title style2"><img src="assets/img/shape/title_shape_1_1.svg" alt="shape"><span class="sub-title2">Our Testimonials</span></span>
-                        <h2 class="sec-title text-white">Our Happy Client’s Review</h2>
+                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">Our Testimonials</span></span>
+                        <h2 class="sec-title text-white">Our Happy Client's Review</h2>
                     </div>
                 </div>
                 <div class="col-auto">
@@ -796,15 +1468,15 @@ Testimonial Area
                             <i class="fa-solid fa-star-sharp"></i>
                             <i class="fa-solid fa-star-sharp"></i>
                         </div>
-                        <p class="testi-item_text">“The song depict their reunion when Harry picks her up his cab one night, and their reminiscence of their past relationship and dreams. The song was Chapins first hit.</p>
+                        <p class="testi-item_text">"Excellent service! The driver was professional, the vehicle was clean and comfortable. They took us on a wonderful tour of Sigiriya and shared amazing insights."</p>
                         <div class="testi-item_wrapp">
                             <div class="testi-item_profile">
                                 <div class="testi-item_img">
                                     <img src="assets/img/testimonial/testi_3_1.jpg" alt="Avater">
                                 </div>
                                 <div class="media-body">
-                                    <h3 class="testi-item_name">David Smith</h3>
-                                    <p class="testi-item_desig">Head Of Growth</p>
+                                    <h3 class="testi-item_name">Sarah Johnson</h3>
+                                    <p class="testi-item_desig">Tourist from UK</p>
                                 </div>
 
                                 <div class="testi-item_quote"><img src="assets/img/icon/quote_2.svg" alt="quote"></div>
@@ -823,15 +1495,15 @@ Testimonial Area
                             <i class="fa-solid fa-star-sharp"></i>
                             <i class="fa-solid fa-star-sharp"></i>
                         </div>
-                        <p class="testi-item_text">“Troactively synthesize schemas before foster like leveraged expertise user friendly The song was Chapins first hit single business low before open source.</p>
+                        <p class="testi-item_text">"Outstanding tour experience! They arranged a perfect 5-day package covering Kandy, Nuwara Eliya, and Ella. The driver was knowledgeable and friendly. Great value for money."</p>
                         <div class="testi-item_wrapp">
                             <div class="testi-item_profile">
                                 <div class="testi-item_img">
                                     <img src="assets/img/testimonial/testi_3_2.jpg" alt="Avater">
                                 </div>
                                 <div class="media-body">
-                                    <h3 class="testi-item_name">Emily Isabella</h3>
-                                    <p class="testi-item_desig">Bank Manager</p>
+                                    <h3 class="testi-item_name">Michael Chen</h3>
+                                    <p class="testi-item_desig">Tourist from Australia</p>
                                 </div>
 
                                 <div class="testi-item_quote"><img src="assets/img/icon/quote_2.svg" alt="quote"></div>
@@ -850,15 +1522,15 @@ Testimonial Area
                             <i class="fa-solid fa-star-sharp"></i>
                             <i class="fa-solid fa-star-sharp"></i>
                         </div>
-                        <p class="testi-item_text">“Jroactively synthesize schemas before foster like leveraged expertise user friendly business low before open source schemas. turnkey data through compelling</p>
+                        <p class="testi-item_text">"Reliable airport transfer service and amazing wildlife safari to Yala National Park. The driver arrived on time and the vehicle was spotless. Perfect for families visiting Sri Lanka!"</p>
                         <div class="testi-item_wrapp">
                             <div class="testi-item_profile">
                                 <div class="testi-item_img">
                                     <img src="assets/img/testimonial/testi_3_3.jpg" alt="Avater">
                                 </div>
                                 <div class="media-body">
-                                    <h3 class="testi-item_name">Harry Callum</h3>
-                                    <p class="testi-item_desig">CEO Founder</p>
+                                    <h3 class="testi-item_name">Priya Patel</h3>
+                                    <p class="testi-item_desig">Tourist from India</p>
                                 </div>
 
                                 <div class="testi-item_quote"><img src="assets/img/icon/quote_2.svg" alt="quote"></div>
@@ -900,154 +1572,9 @@ Testimonial Area
         </div>
     </section>
     <!--==============================
-Bloge Area  
-==============================-->
-    <section class="blog-area space" id="blog-area">
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="sub-title style2">
-                    <img src="assets/img/shape/title_shape_1.svg" alt="shape">
-                    <span class="sub-title2">Sri Lanka Tourism</span>
-                </span>
-                <h2 class="sec-title">Beautiful Tourist Destinations</h2>
-            </div>
-            <div class="row th-carousel slider-shadow" data-slide-show="3" data-lg-slide-show="2" data-md-slide-show="2" data-sm-slide-show="1" data-arrows="true" data-xl-arrows="true" data-ml-arrows="true">
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInUp">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/sigiriya.jpg" alt="Sigiriya Rock Fortress">
-                            <a class="blog-date" href="blog.html"><span class="month">01</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(15)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Sigiriya Rock - Ancient Wonder of Sri Lanka</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInDown">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/ella.jpg" alt="Ella Nine Arch Bridge">
-                            <a class="blog-date" href="blog.html"><span class="month">02</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(12)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Ella Nine Arch Bridge - Colonial Engineering Marvel</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInUp">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/gallefort.jpg" alt="Galle Fort">
-                            <a class="blog-date" href="blog.html"><span class="month">03</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(08)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Galle Fort - Dutch Colonial Heritage Site</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInDown">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/little-england.jpg" alt="Nuwara Eliya Tea Plantations">
-                            <a class="blog-date" href="blog.html"><span class="month">04</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(20)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Nuwara Eliya - Little England of Sri Lanka</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInUp">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/mirissa.jpg" alt="Mirissa Beach">
-                            <a class="blog-date" href="blog.html"><span class="month">05</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(25)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Mirissa Beach - Whale Watching Paradise</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInDown">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/Kandy-tooth-temple.jpg" alt="Temple of the Tooth Kandy">
-                            <a class="blog-date" href="blog.html"><span class="month">06</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(18)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Kandy Temple - Sacred Cultural Capital</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInUp">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/yala.jpg" alt="Yala National Park">
-                            <a class="blog-date" href="blog.html"><span class="month">07</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Wildlife Expert</a>
-                                <a href="blog.html">Comments(22)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Yala National Park - Wildlife Safari Adventure</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInDown">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/sripadaya.jpeg" alt="Adam's Peak">
-                            <a class="blog-date" href="blog.html"><span class="month">08</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Adventure Guide</a>
-                                <a href="blog.html">Comments(14)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Adam's Peak - Sacred Mountain Pilgrimage</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!--==============================
 Brand Area  
 ==============================-->
-    <div class="space-bottom overflow-hidden">
+    <div class="space overflow-hidden">
         <div class="container">
             <div class="title-area text-center">
                 <span class="brand-title">
@@ -1081,7 +1608,7 @@ Contact Info Area
             <div class="contact-card style2">
                 <div class="info-card style3 active">
                     <div class="footer-logo">
-                        <a href="index.html"><img src="assets/img/logo-black.svg" alt="Taxiar"></a>
+                        <a href="index.html"><img src="assets/img/logo-black.svg" alt="C&A Tour and Taxi"></a>
                     </div>
                 </div>
                 <div class="info-card style3">
@@ -1154,13 +1681,16 @@ Contact Info Area
                                         <a href="#about-sec">About Us</a>
                                     </li>
                                     <li>
-                                        <a href="#services-area">Service</a>
+                                        <a href="#services-area">Taxi Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tour-packages">Tour Packages</a>
                                     </li>
                                     <li>
                                         <a href="#booking-area">Contact</a>
                                     </li>
                                     <li>
-                                        <a href="#blog-area">Blog</a>
+                                        <a href="#blog-area">Destinations</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1220,7 +1750,7 @@ Contact Info Area
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <p class="copyright-text"><i class="fal fa-copyright"></i> 2023<a href="https://themeforest.net/user/themeholy">Taxiar.</a> All Rights Reserved.</p>
+                        <p class="copyright-text"><i class="fal fa-copyright"></i> 2023<a href="https://themeforest.net/user/themeholy"> C&A Tour and Taxi.</a> All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-6">
                         <div class="footer-links">
@@ -1256,36 +1786,121 @@ Contact Info Area
     <!--==============================
     All Js File
 ============================== -->
-    <!-- WhatsApp Booking Script -->
+    <!-- Enhanced Booking Script -->
     <script>
-    function submitToWhatsApp(event) {
+    // Hero booking form submission
+    function submitHeroBooking(event) {
         event.preventDefault(); // Prevent default form submission
         
-        // Collect form data using correct IDs
-        const name = document.getElementById('text')?.value || 'Not provided';
-        const phone = document.getElementById('phone')?.value || 'Not provided';
-        const passengers = document.getElementById('passenger')?.value || '1';
-        const pickup = document.getElementById('s-destination')?.value || 'Not provided';
-        const destination = document.getElementById('e-destination')?.value || 'Not provided';
-        const date = document.getElementById('date-pick')?.value || 'Not provided';
-        const time = document.getElementById('time-pick')?.value || 'Not provided';
+        // Collect form data from hero booking form
+        const name = document.getElementById('hero-name')?.value || 'Not provided';
+        const phone = document.getElementById('hero-phone')?.value || 'Not provided';
+        const passengers = document.getElementById('hero-passenger')?.value || '1';
+        const pickup = document.getElementById('hero-s-destination')?.value || 'Not provided';
+        const destination = document.getElementById('hero-e-destination')?.value || 'Not provided';
+        const date = document.getElementById('hero-date-pick')?.value || 'Not provided';
+        const time = document.getElementById('hero-time-pick')?.value || 'Not provided';
         
-        // Create WhatsApp message with proper URL encoding for each part
+        // Create WhatsApp message for taxi booking
         const messageParts = [
-            "*New Taxi Booking Request*",
-            "", // For an empty line
+            "*🚖 Quick Taxi Booking Request*",
+            "",
             `*Name:* ${encodeURIComponent(name)}`,
             `*Phone:* ${encodeURIComponent(phone)}`,
             `*Passengers:* ${encodeURIComponent(passengers)}`,
-            `*From:* ${encodeURIComponent(pickup)}`,
-            `*To:* ${encodeURIComponent(destination)}`,
+            `*Pickup Location:* ${encodeURIComponent(pickup)}`,
+            `*Drop-off Location:* ${encodeURIComponent(destination)}`,
             `*Date:* ${encodeURIComponent(date)}`,
             `*Time:* ${encodeURIComponent(time)}`,
-            "", // For an empty line
-            "I would like to book a taxi for the above details."
+            "",
+            "I would like to book a taxi service with the above details."
         ];
+        
         const message = messageParts.join("%0A"); // %0A is the URL encoding for newline
-
+        const whatsappURL = `https://wa.me/94768971805?text=${message}`;
+        window.open(whatsappURL, '_blank');
+        
+        return false;
+    }
+    
+    function toggleFormFields() {
+        const serviceType = document.getElementById('service-type').value;
+        const taxiFields = document.getElementById('taxi-fields');
+        const tourFields = document.getElementById('tour-fields');
+        
+        if (serviceType === 'taxi') {
+            taxiFields.style.display = 'block';
+            tourFields.style.display = 'none';
+        } else if (serviceType === 'tour') {
+            taxiFields.style.display = 'none';
+            tourFields.style.display = 'block';
+        } else {
+            taxiFields.style.display = 'none';
+            tourFields.style.display = 'none';
+        }
+    }
+    
+    function submitToWhatsApp(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Collect common form data
+        const serviceType = document.getElementById('service-type')?.value || 'Not specified';
+        const name = document.getElementById('text')?.value || 'Not provided';
+        const phone = document.getElementById('phone')?.value || 'Not provided';
+        const email = document.getElementById('email')?.value || 'Not provided';
+        const passengers = document.getElementById('passenger')?.value || '1';
+        const date = document.getElementById('date-pick')?.value || 'Not provided';
+        const time = document.getElementById('time-pick')?.value || 'Not provided';
+        const specialRequests = document.getElementById('special-requests')?.value || 'None';
+        
+        let messageParts = [];
+        
+        if (serviceType === 'taxi') {
+            // Taxi booking message
+            const pickup = document.getElementById('s-destination')?.value || 'Not provided';
+            const destination = document.getElementById('e-destination')?.value || 'Not provided';
+            
+            messageParts = [
+                "*🚖 New Taxi Booking Request*",
+                "",
+                `*Name:* ${encodeURIComponent(name)}`,
+                `*Phone:* ${encodeURIComponent(phone)}`,
+                `*Email:* ${encodeURIComponent(email)}`,
+                `*Passengers:* ${encodeURIComponent(passengers)}`,
+                `*Pickup Location:* ${encodeURIComponent(pickup)}`,
+                `*Drop-off Location:* ${encodeURIComponent(destination)}`,
+                `*Date:* ${encodeURIComponent(date)}`,
+                `*Time:* ${encodeURIComponent(time)}`,
+                `*Special Requests:* ${encodeURIComponent(specialRequests)}`,
+                "",
+                "I would like to book a taxi service with the above details."
+            ];
+        } else if (serviceType === 'tour') {
+            // Tour package booking message
+            const tourPackage = document.getElementById('tour-package')?.value || 'Not specified';
+            const tourDuration = document.getElementById('tour-duration')?.value || 'Not specified';
+            
+            messageParts = [
+                "*🏝️ New Tour Package Booking Request*",
+                "",
+                `*Name:* ${encodeURIComponent(name)}`,
+                `*Phone:* ${encodeURIComponent(phone)}`,
+                `*Email:* ${encodeURIComponent(email)}`,
+                `*Passengers:* ${encodeURIComponent(passengers)}`,
+                `*Tour Package:* ${encodeURIComponent(tourPackage)}`,
+                `*Preferred Duration:* ${encodeURIComponent(tourDuration)}`,
+                `*Start Date:* ${encodeURIComponent(date)}`,
+                `*Time:* ${encodeURIComponent(time)}`,
+                `*Special Requests:* ${encodeURIComponent(specialRequests)}`,
+                "",
+                "I would like to book a tour package with the above details. Please provide more information about pricing and itinerary."
+            ];
+        } else {
+            alert('Please select a service type first.');
+            return false;
+        }
+        
+        const message = messageParts.join("%0A"); // %0A is the URL encoding for newline
         const whatsappURL = `https://wa.me/94768971805?text=${message}`;
         window.open(whatsappURL, '_blank');
         
