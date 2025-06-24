@@ -773,54 +773,55 @@ Booking Area
 ==============================-->
     <div class="booking-section">
         <div class="container">
-            <form action="mail.php" method="POST" class="booking-form ajax-contact wow fadeInUp">
-                <div class="input-wrap">
-                    <div class="row">
-                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
-                            <i class="fa-light fa-user"></i>
-                        </div>
-                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
-                            <input type="number" class="form-control" name="phone" id="phone"
-                                placeholder="Phone Number">
-                            <i class="fa-light fa-phone-rotary"></i>
-                        </div>
-                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
-                            <select name="passenger" id="passenger" class="form-select nice-select">
-                                <option value="" disabled selected hidden>passenger</option>
-                                <option value="passenger1">passenger 1</option>
-                                <option value="passenger2">passenger 2</option>
-                                <option value="passenger3">passenger 3</option>
-                                <option value="passenger4">passenger 4</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
-                            <input type="text" class="form-control" name="s-destination" id="s-destination"
-                                placeholder="Start Destination">
-                            <i class="fa-sharp fa-regular fa-location-dot"></i>
-                        </div>
-                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
-                            <input type="text" class="form-control" name="e-destination" id="e-destination"
-                                placeholder="End Destination">
-                            <i class="fa-sharp fa-regular fa-location-dot"></i>
-                        </div>
-                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
-                            <input type="text" class="date-pick form-control" name="date" id="date-pick"
-                                placeholder="Select Date">
-                            <i class="fa-light fa-calendar-days"></i>
-                        </div>
-                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
-                            <input type="text" class="time-pick form-control" name="time" id="time-pick"
-                                placeholder="Select Time">
-                            <i class="fa-light fa-clock"></i>
-                        </div>
-                        <div class="form-btn col-xl-3 col-lg-4 col-sm-6">
-                            <button class="th-btn">Book Taxi Now <i class="fa-regular fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                    <p class="form-messages mb-0 mt-3"></p>
-                </div>
-            </form>
+                         <form onsubmit="return submitHeroBooking(event)" class="booking-form ajax-contact wow fadeInUp">
+                 <div class="input-wrap">
+                     <div class="row">
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="form-control" name="name" id="hero-name" placeholder="Your Name" required>
+                             <i class="fa-light fa-user"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="number" class="form-control" name="phone" id="hero-phone"
+                                 placeholder="Phone Number" required>
+                             <i class="fa-light fa-phone-rotary"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <select name="passenger" id="hero-passenger" class="form-select nice-select">
+                                 <option value="" disabled selected hidden>passenger</option>
+                                 <option value="1">1 passenger</option>
+                                 <option value="2">2 passengers</option>
+                                 <option value="3">3 passengers</option>
+                                 <option value="4">4 passengers</option>
+                                 <option value="5+">5+ passengers</option>
+                             </select>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="form-control" name="s-destination" id="hero-s-destination"
+                                 placeholder="Start Destination" required>
+                             <i class="fa-sharp fa-regular fa-location-dot"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="form-control" name="e-destination" id="hero-e-destination"
+                                 placeholder="End Destination" required>
+                             <i class="fa-sharp fa-regular fa-location-dot"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="date-pick form-control" name="date" id="hero-date-pick"
+                                 placeholder="Select Date" required>
+                             <i class="fa-light fa-calendar-days"></i>
+                         </div>
+                         <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                             <input type="text" class="time-pick form-control" name="time" id="hero-time-pick"
+                                 placeholder="Select Time">
+                             <i class="fa-light fa-clock"></i>
+                         </div>
+                         <div class="form-btn col-xl-3 col-lg-4 col-sm-6">
+                             <button type="submit" class="th-btn">Book Taxi Now <i class="fa-regular fa-arrow-right"></i></button>
+                         </div>
+                     </div>
+                     <p class="form-messages mb-0 mt-3"></p>
+                 </div>
+             </form>
         </div>
     </div>
 
@@ -968,109 +969,7 @@ Destinations Gallery Area
             </div>
         </div>
     </section>
-    <!--==============================
-About Area  
-==============================-->
-    <!-- <section class="space-top" id="about-sec">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 mb-40 mb-xl-0">
-                    <div class="img-box8 wow fadeInLeft">
-                        <div class="img1">
-                            <img src="assets/img/hero/taxi5.png" alt="Professional Taxi Service in Sri Lanka">
-                        </div>
-                        <div class="year-counter">
-                            <div class="year-counter_number">15+</div>
-                            <div class="media-body"><span class="year-counter_title">Years Serving Sri Lanka</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 wow fadeInRight">
-                    <div class="title-area mb-35">
-                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">ABOUT OUR COMPANY</span></span>
-                        <h2 class="sec-title">Your Trusted Travel Partner in Sri Lanka</h2>
-                        <p class="mb-20">With over 15 years of experience, C&A Tours has been providing reliable and comfortable transportation services across Sri Lanka. We take pride in our professional drivers, well-maintained vehicles, and commitment to customer satisfaction.</p>
-                    </div>
-                    <div class="about-feature-wrap style2">
-                        <div class="about-feature">
-                            <div class="about-icon">
-                                <img src="assets/img/icon/about-feature_1.svg" alt="Icon">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="about_title">Safe & Reliable</h3>
-                                <p class="about_text">Your safety is our top priority. Our vehicles are regularly maintained and our drivers are carefully vetted professionals with extensive local knowledge.</p>
-                            </div>
-                        </div>
-                        <div class="about-feature">
-                            <div class="about_icon">
-                                <img src="assets/img/icon/about-feature_2.svg" alt="Icon">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="about_title">Local Experts</h3>
-                                <p class="about_text">Our drivers are not just drivers - they're local experts who can share insights about Sri Lanka's culture, history, and hidden gems.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn-group style2">
-                        <a href="about.html" class="th-btn radius-btn">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <span class="about-call-text"> <a href="tel:+94767801452" class="about-call-btn"><i class="fa-solid fa-phone"></i></a>+94 71 573 9188</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!--==============================
-Counter Area  
-==============================-->
-    <!-- <section class="space">
-        <div class="container">
-            <div class="counter-wrap style3">
-                <div class="counter-line"></div>
-                <div class="row gy-40">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-card style3 wow fadeInUp">
-                            <div class="counter-card_icon" data-bg-src="assets/img/shape/counter_shape.png">
-                                <img src="assets/img/icon/counter_3_1.svg" alt="icon">
-                            </div>
-                            <h3 class="counter-card_number"><span class="counter-number">32.5</span>k<span class="counter-plus">+</span>
-                            </h3>
-                            <p class="counter-card_text">Special Vehicles</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-card style3 wow fadeInUp">
-                            <div class="counter-card_icon" data-bg-src="assets/img/shape/counter_shape.png">
-                                <img src="assets/img/icon/counter_3_2.svg" alt="icon">
-                            </div>
-                            <h3 class="counter-card_number"><span class="counter-number">13.8</span>k<span class="counter-plus">+</span>
-                            </h3>
-                            <p class="counter-card_text">People Pickup</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-card style3 wow fadeInUp">
-                            <div class="counter-card_icon" data-bg-src="assets/img/shape/counter_shape.png">
-                                <img src="assets/img/icon/counter_3_3.svg" alt="icon">
-                            </div>
-                            <h3 class="counter-card_number"><span class="counter-number">26.6</span>k<span class="counter-plus">+</span>
-                            </h3>
-                            <p class="counter-card_text">Road Trips Done</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="counter-card style3 wow fadeInUp">
-                            <div class="counter-card_icon" data-bg-src="assets/img/shape/counter_shape.png">
-                                <img src="assets/img/icon/counter_3_4.svg" alt="icon">
-                            </div>
-                            <h3 class="counter-card_number"><span class="counter-number">65.2</span>k<span class="counter-plus">+</span>
-                            </h3>
-                            <p class="counter-card_text">Satisfied Clients</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
+    
     <!--==============================
 Taxi Area  
 ==============================-->
@@ -1359,7 +1258,7 @@ Booking Area
             <div class="row">
                 <div class="col-xl-6 wow fadeInLeft">
                     <div class="title-area text-center text-xl-start">
-                        <span class="sub-title style2"><img src="assets/img/shape/title_shape_1_1.svg" alt="shape"><span class="sub-title2">Taxi Booking Form</span></span>
+                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">Taxi Booking Form</span></span>
                         <h2 class="sec-title text-white">Book Your Taxi Online</h2>
                         <p class="booking-text">Book your taxi ride in just a few taps. Our reliable service is available 24/7 across Sri Lanka. For immediate assistance, message us on WhatsApp.</p>
                     </div>
@@ -1546,7 +1445,7 @@ Testimonial Area
             <div class="row justify-content-center justify-content-lg-between align-items-center">
                 <div class="col-lg-8">
                     <div class="title-area text-center text-lg-start">
-                        <span class="sub-title style2"><img src="assets/img/shape/title_shape_1_1.svg" alt="shape"><span class="sub-title2">Our Testimonials</span></span>
+                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">Our Testimonials</span></span>
                         <h2 class="sec-title text-white">Our Happy Client's Review</h2>
                     </div>
                 </div>
@@ -1569,7 +1468,7 @@ Testimonial Area
                             <i class="fa-solid fa-star-sharp"></i>
                             <i class="fa-solid fa-star-sharp"></i>
                         </div>
-                        <p class="testi-item_text">"Excellent service! The driver was professional, the vehicle was clean and comfortable. They took us on a wonderful tour of Sigiriya and shared amazing insights about Sri Lankan history. Highly recommended!"</p>
+                        <p class="testi-item_text">"Excellent service! The driver was professional, the vehicle was clean and comfortable. They took us on a wonderful tour of Sigiriya and shared amazing insights."</p>
                         <div class="testi-item_wrapp">
                             <div class="testi-item_profile">
                                 <div class="testi-item_img">
@@ -1596,7 +1495,7 @@ Testimonial Area
                             <i class="fa-solid fa-star-sharp"></i>
                             <i class="fa-solid fa-star-sharp"></i>
                         </div>
-                        <p class="testi-item_text">"Outstanding tour experience! They arranged a perfect 5-day package covering Kandy, Nuwara Eliya, and Ella. The driver was knowledgeable and friendly. Great value for money. Will definitely book again!"</p>
+                        <p class="testi-item_text">"Outstanding tour experience! They arranged a perfect 5-day package covering Kandy, Nuwara Eliya, and Ella. The driver was knowledgeable and friendly. Great value for money."</p>
                         <div class="testi-item_wrapp">
                             <div class="testi-item_profile">
                                 <div class="testi-item_img">
@@ -1673,154 +1572,9 @@ Testimonial Area
         </div>
     </section>
     <!--==============================
-Bloge Area  
-==============================-->
-    <section class="blog-area space" id="blog-area">
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="sub-title style2">
-                    <img src="assets/img/logo1.png" class="icon-logo" alt="shape">
-                    <span class="sub-title2">Sri Lanka Tourism</span>
-                </span>
-                <h2 class="sec-title">Beautiful Tourist Destinations</h2>
-            </div>
-            <div class="row th-carousel slider-shadow" data-slide-show="3" data-lg-slide-show="2" data-md-slide-show="2" data-sm-slide-show="1" data-arrows="true" data-xl-arrows="true" data-ml-arrows="true">
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInUp">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/sigiriya.jpg" alt="Sigiriya Rock Fortress">
-                            <a class="blog-date" href="blog.html"><span class="month">01</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(15)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Sigiriya Rock - Ancient Wonder of Sri Lanka</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInDown">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/ella.jpg" alt="Ella Nine Arch Bridge">
-                            <a class="blog-date" href="blog.html"><span class="month">02</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(12)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Ella Nine Arch Bridge - Colonial Engineering Marvel</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInUp">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/gallefort.jpg" alt="Galle Fort">
-                            <a class="blog-date" href="blog.html"><span class="month">03</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(08)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Galle Fort - Dutch Colonial Heritage Site</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInDown">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/little-england.jpg" alt="Nuwara Eliya Tea Plantations">
-                            <a class="blog-date" href="blog.html"><span class="month">04</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(20)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Nuwara Eliya - Little England of Sri Lanka</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInUp">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/mirissa.jpg" alt="Mirissa Beach">
-                            <a class="blog-date" href="blog.html"><span class="month">05</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(25)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Mirissa Beach - Whale Watching Paradise</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInDown">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/Kandy-tooth-temple.jpg" alt="Temple of the Tooth Kandy">
-                            <a class="blog-date" href="blog.html"><span class="month">06</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Travel Guide</a>
-                                <a href="blog.html">Comments(18)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Kandy Temple - Sacred Cultural Capital</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInUp">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/yala.jpg" alt="Yala National Park">
-                            <a class="blog-date" href="blog.html"><span class="month">07</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Wildlife Expert</a>
-                                <a href="blog.html">Comments(22)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Yala National Park - Wildlife Safari Adventure</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="blog-item style3 wow fadeInDown">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/sripadaya.jpeg" alt="Adam's Peak">
-                            <a class="blog-date" href="blog.html"><span class="month">08</span> Jun, 2025</a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta style2">
-                                <a href="blog.html">by Adventure Guide</a>
-                                <a href="blog.html">Comments(14)</a>
-                            </div>
-                            <h3 class="blog-item_title"><a href="blog-details.html">Adam's Peak - Sacred Mountain Pilgrimage</a></h3>
-                            <a href="blog-details.html" class="link-btn">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!--==============================
 Brand Area  
 ==============================-->
-    <div class="space-bottom overflow-hidden">
+    <div class="space overflow-hidden">
         <div class="container">
             <div class="title-area text-center">
                 <span class="brand-title">
@@ -2034,6 +1788,41 @@ Contact Info Area
 ============================== -->
     <!-- Enhanced Booking Script -->
     <script>
+    // Hero booking form submission
+    function submitHeroBooking(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Collect form data from hero booking form
+        const name = document.getElementById('hero-name')?.value || 'Not provided';
+        const phone = document.getElementById('hero-phone')?.value || 'Not provided';
+        const passengers = document.getElementById('hero-passenger')?.value || '1';
+        const pickup = document.getElementById('hero-s-destination')?.value || 'Not provided';
+        const destination = document.getElementById('hero-e-destination')?.value || 'Not provided';
+        const date = document.getElementById('hero-date-pick')?.value || 'Not provided';
+        const time = document.getElementById('hero-time-pick')?.value || 'Not provided';
+        
+        // Create WhatsApp message for taxi booking
+        const messageParts = [
+            "*🚖 Quick Taxi Booking Request*",
+            "",
+            `*Name:* ${encodeURIComponent(name)}`,
+            `*Phone:* ${encodeURIComponent(phone)}`,
+            `*Passengers:* ${encodeURIComponent(passengers)}`,
+            `*Pickup Location:* ${encodeURIComponent(pickup)}`,
+            `*Drop-off Location:* ${encodeURIComponent(destination)}`,
+            `*Date:* ${encodeURIComponent(date)}`,
+            `*Time:* ${encodeURIComponent(time)}`,
+            "",
+            "I would like to book a taxi service with the above details."
+        ];
+        
+        const message = messageParts.join("%0A"); // %0A is the URL encoding for newline
+        const whatsappURL = `https://wa.me/94768971805?text=${message}`;
+        window.open(whatsappURL, '_blank');
+        
+        return false;
+    }
+    
     function toggleFormFields() {
         const serviceType = document.getElementById('service-type').value;
         const taxiFields = document.getElementById('taxi-fields');
