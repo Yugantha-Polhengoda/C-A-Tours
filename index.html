@@ -59,6 +59,10 @@
     
     <!-- Custom Tour Package Styles -->
     <style>
+        .icon-logo {
+            height: 30px;
+            width: 30px;
+        }
         .service-card.style3 {
             background: #fff;
             border-radius: 15px;
@@ -173,21 +177,212 @@
             width: 100% !important;
         }
         
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .service-card_img {
-                height: 200px;
-            }
-            
-            .service-card_content {
-                padding: 20px;
-            }
-            
-            .service-card_title {
-                font-size: 20px;
-            }
-        }
-    </style>
+                 /* Responsive adjustments */
+         @media (max-width: 768px) {
+             .service-card_img {
+                 height: 200px;
+             }
+             
+             .service-card_content {
+                 padding: 20px;
+             }
+             
+             .service-card_title {
+                 font-size: 20px;
+             }
+         }
+         
+         /* Tourism Feature Cards */
+         .feature-card.style-tourism {
+             background: rgba(255, 255, 255, 0.95);
+             border-radius: 20px;
+             padding: 40px 30px;
+             text-align: center;
+             transition: all 0.3s ease;
+             height: 100%;
+             backdrop-filter: blur(10px);
+             border: 1px solid rgba(255, 255, 255, 0.2);
+         }
+         
+         .feature-card.style-tourism:hover {
+             transform: translateY(-10px);
+             background: rgba(255, 255, 255, 1);
+             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+         }
+         
+         .feature-card_icon {
+             width: 80px;
+             height: 80px;
+             margin: 0 auto 25px;
+             background: var(--theme-color);
+             border-radius: 50%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             font-size: 32px;
+             color: #fff;
+             transition: all 0.3s ease;
+         }
+         
+         .feature-card.style-tourism:hover .feature-card_icon {
+             transform: scale(1.1);
+             background: #ff6b35;
+         }
+         
+         .feature-card_title {
+             font-size: 22px;
+             font-weight: 700;
+             margin-bottom: 15px;
+             color: #1a1a1a;
+         }
+         
+         .feature-card_text {
+             color: #666;
+             line-height: 1.6;
+             font-size: 14px;
+         }
+         
+         /* Destination Gallery Styles */
+         .destination-card {
+             position: relative;
+             border-radius: 20px;
+             overflow: hidden;
+             height: 300px;
+             cursor: pointer;
+             transition: all 0.3s ease;
+         }
+         
+         .destination-card.large {
+             height: 620px;
+         }
+         
+         .destination-card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+         }
+         
+         .destination-img {
+             width: 100%;
+             height: 100%;
+             position: relative;
+             overflow: hidden;
+         }
+         
+         .destination-img img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             transition: transform 0.3s ease;
+         }
+         
+         .destination-card:hover .destination-img img {
+             transform: scale(1.1);
+         }
+         
+         .destination-overlay {
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: linear-gradient(45deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+             display: flex;
+             align-items: flex-end;
+             padding: 30px;
+             transition: all 0.3s ease;
+         }
+         
+         .destination-card:hover .destination-overlay {
+             background: linear-gradient(45deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+         }
+         
+         .destination-content {
+             color: #fff;
+         }
+         
+         .destination-category {
+             display: inline-block;
+             background: var(--theme-color);
+             color: #fff;
+             padding: 6px 15px;
+             border-radius: 25px;
+             font-size: 12px;
+             font-weight: 600;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+             margin-bottom: 15px;
+         }
+         
+         .destination-title {
+             font-size: 28px;
+             font-weight: 700;
+             margin-bottom: 10px;
+             color: #fff;
+         }
+         
+         .destination-desc {
+             font-size: 16px;
+             margin-bottom: 15px;
+             opacity: 0.9;
+         }
+         
+         .destination-features {
+             display: flex;
+             gap: 20px;
+             flex-wrap: wrap;
+         }
+         
+         .destination-features span {
+             font-size: 14px;
+             opacity: 0.8;
+             display: flex;
+             align-items: center;
+             gap: 8px;
+         }
+         
+         .destination-features i {
+             font-size: 12px;
+         }
+         
+         /* Responsive Design */
+         @media (max-width: 992px) {
+             .destination-card.large {
+                 height: 400px;
+             }
+             
+             .feature-card.style-tourism {
+                 padding: 30px 20px;
+             }
+             
+             .feature-card_icon {
+                 width: 70px;
+                 height: 70px;
+                 font-size: 28px;
+             }
+         }
+         
+         @media (max-width: 768px) {
+             .destination-card {
+                 height: 250px;
+             }
+             
+             .destination-card.large {
+                 height: 300px;
+             }
+             
+             .destination-overlay {
+                 padding: 20px;
+             }
+             
+             .destination-title {
+                 font-size: 22px;
+             }
+             
+             .feature-card.style-tourism {
+                 padding: 25px 15px;
+             }
+         }
+     </style>
 
 </head>
 
@@ -447,7 +642,7 @@
                             <div class="header-logo">
                                 <a href="index.html" class="logo">
                                     <div>
-                                        <img class="logo-icon" src="assets/img/log.png" alt="logo-bg"/>
+                                        <img class="logo-icon" src="assets/img//logo1.png" alt="logo-bg"/>
                                     </div>
                                     <div>
                                         <span class="logo-text anton-regular">
@@ -506,7 +701,7 @@ Hero Area
         <div class="hero-slider-8 th-carousel" id="heroSlide8" data-slide-show="1" data-md-slide-show="1" data-fade="true">
 
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/hero/taxi7.png">
+                <div class="th-hero-bg" data-bg-src="assets/img/hero/1.jpg">
                     <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
                 </div>
                 <div class="container">
@@ -527,7 +722,7 @@ Hero Area
             </div>
 
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/hero/hero_bg_8_3.jpg">
+                <div class="th-hero-bg" data-bg-src="assets/img/hero/3.jpg">
                     <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
                 </div>
                 <div class="container">
@@ -548,7 +743,7 @@ Hero Area
             </div>
 
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/hero/hero_bg_8_1.jpg">
+                <div class="th-hero-bg" data-bg-src="assets/img/hero/2.jpg">
                     <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
                 </div>
                 <div class="container">
@@ -574,9 +769,209 @@ Hero Area
         </div>
     </div>
     <!--==============================
+Booking Area  
+==============================-->
+    <div class="booking-section">
+        <div class="container">
+            <form action="mail.php" method="POST" class="booking-form ajax-contact wow fadeInUp">
+                <div class="input-wrap">
+                    <div class="row">
+                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                            <i class="fa-light fa-user"></i>
+                        </div>
+                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                            <input type="number" class="form-control" name="phone" id="phone"
+                                placeholder="Phone Number">
+                            <i class="fa-light fa-phone-rotary"></i>
+                        </div>
+                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                            <select name="passenger" id="passenger" class="form-select nice-select">
+                                <option value="" disabled selected hidden>passenger</option>
+                                <option value="passenger1">passenger 1</option>
+                                <option value="passenger2">passenger 2</option>
+                                <option value="passenger3">passenger 3</option>
+                                <option value="passenger4">passenger 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                            <input type="text" class="form-control" name="s-destination" id="s-destination"
+                                placeholder="Start Destination">
+                            <i class="fa-sharp fa-regular fa-location-dot"></i>
+                        </div>
+                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                            <input type="text" class="form-control" name="e-destination" id="e-destination"
+                                placeholder="End Destination">
+                            <i class="fa-sharp fa-regular fa-location-dot"></i>
+                        </div>
+                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                            <input type="text" class="date-pick form-control" name="date" id="date-pick"
+                                placeholder="Select Date">
+                            <i class="fa-light fa-calendar-days"></i>
+                        </div>
+                        <div class="form-group col-xl-3 col-lg-4 col-sm-6">
+                            <input type="text" class="time-pick form-control" name="time" id="time-pick"
+                                placeholder="Select Time">
+                            <i class="fa-light fa-clock"></i>
+                        </div>
+                        <div class="form-btn col-xl-3 col-lg-4 col-sm-6">
+                            <button class="th-btn">Book Taxi Now <i class="fa-regular fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <p class="form-messages mb-0 mt-3"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--==============================
+Destinations Gallery Area  
+==============================-->
+    <section class="space" id="destinations-gallery">
+        <div class="container">
+            <div class="title-area text-center">
+                <span class="sub-title style2">
+                    <img src="assets/img/logo1.png" class="icon-logo" alt="shape">
+                    <span class="sub-title2">MUST-VISIT DESTINATIONS</span>
+                </span>
+                <h2 class="sec-title">Explore Sri Lanka's Most Iconic Places</h2>
+                <p class="sec-text">From ancient wonders to natural beauty, discover the diverse attractions that make Sri Lanka a world-class destination</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="destination-card large wow fadeInUp">
+                        <div class="destination-img">
+                            <img src="assets/img/blog/sigiriya.jpg" alt="Sigiriya Rock Fortress">
+                            <div class="destination-overlay">
+                                <div class="destination-content">
+                                    <span class="destination-category">UNESCO World Heritage</span>
+                                    <h3 class="destination-title">Sigiriya Rock Fortress</h3>
+                                    <p class="destination-desc">Ancient rock citadel with stunning frescoes and breathtaking views</p>
+                                    <div class="destination-features">
+                                        <span><i class="fas fa-map-marker-alt"></i> Central Province</span>
+                                        <span><i class="fas fa-clock"></i> 3-4 hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="destination-card wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="destination-img">
+                                    <img src="assets/img/blog/Kandy-tooth-temple.jpg" alt="Temple of the Tooth Kandy">
+                                    <div class="destination-overlay">
+                                        <div class="destination-content">
+                                            <span class="destination-category">Sacred Site</span>
+                                            <h3 class="destination-title">Temple of the Tooth</h3>
+                                            <p class="destination-desc">Most sacred Buddhist temple in Sri Lanka</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <div class="destination-card wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="destination-img">
+                                    <img src="assets/img/blog/ella.jpg" alt="Ella Nine Arch Bridge">
+                                    <div class="destination-overlay">
+                                        <div class="destination-content">
+                                            <span class="destination-category">Hill Country</span>
+                                            <h3 class="destination-title">Ella</h3>
+                                            <p class="destination-desc">Scenic beauty & railway heritage</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <div class="destination-card wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="destination-img">
+                                    <img src="assets/img/blog/yala.jpg" alt="Yala National Park">
+                                    <div class="destination-overlay">
+                                        <div class="destination-content">
+                                            <span class="destination-category">Wildlife</span>
+                                            <h3 class="destination-title">Yala Safari</h3>
+                                            <p class="destination-desc">Leopard & elephant spotting</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="destination-card wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="destination-img">
+                            <img src="assets/img/blog/gallefort.jpg" alt="Galle Fort">
+                            <div class="destination-overlay">
+                                <div class="destination-content">
+                                    <span class="destination-category">Colonial Heritage</span>
+                                    <h3 class="destination-title">Galle Fort</h3>
+                                    <p class="destination-desc">Dutch colonial architecture meets ocean views</p>
+                                    <div class="destination-features">
+                                        <span><i class="fas fa-map-marker-alt"></i> Southern Coast</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="destination-card wow fadeInUp" data-wow-delay="1s">
+                        <div class="destination-img">
+                            <img src="assets/img/blog/little-england.jpg" alt="Nuwara Eliya">
+                            <div class="destination-overlay">
+                                <div class="destination-content">
+                                    <span class="destination-category">Tea Country</span>
+                                    <h3 class="destination-title">Nuwara Eliya</h3>
+                                    <p class="destination-desc">Little England with tea plantations and cool climate</p>
+                                    <div class="destination-features">
+                                        <span><i class="fas fa-thermometer-half"></i> 16°C avg</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="destination-card wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="destination-img">
+                            <img src="assets/img/blog/mirissa.jpg" alt="Mirissa Beach">
+                            <div class="destination-overlay">
+                                <div class="destination-content">
+                                    <span class="destination-category">Beach Paradise</span>
+                                    <h3 class="destination-title">Mirissa Beach</h3>
+                                    <p class="destination-desc">Whale watching and pristine golden sands</p>
+                                    <div class="destination-features">
+                                        <span><i class="fas fa-swimmer"></i> Swimming</span>
+                                        <span><i class="fas fa-fish"></i> Whale Watching</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-50">
+                <a href="#tour-packages" class="th-btn style3 radius-btn">Explore All Destinations<i class="fa-regular fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+    <!--==============================
 About Area  
 ==============================-->
-    <section class="space-top" id="about-sec">
+    <!-- <section class="space-top" id="about-sec">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 mb-40 mb-xl-0">
@@ -592,7 +987,7 @@ About Area
                 </div>
                 <div class="col-xl-6 wow fadeInRight">
                     <div class="title-area mb-35">
-                        <span class="sub-title style2"><img src="assets/img/shape/title_shape_1.svg" alt="shape"><span class="sub-title2">ABOUT OUR COMPANY</span></span>
+                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">ABOUT OUR COMPANY</span></span>
                         <h2 class="sec-title">Your Trusted Travel Partner in Sri Lanka</h2>
                         <p class="mb-20">With over 15 years of experience, C&A Tours has been providing reliable and comfortable transportation services across Sri Lanka. We take pride in our professional drivers, well-maintained vehicles, and commitment to customer satisfaction.</p>
                     </div>
@@ -623,11 +1018,11 @@ About Area
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--==============================
 Counter Area  
 ==============================-->
-    <section class="space">
+    <!-- <section class="space">
         <div class="container">
             <div class="counter-wrap style3">
                 <div class="counter-line"></div>
@@ -675,7 +1070,7 @@ Counter Area
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--==============================
 Taxi Area  
 ==============================-->
@@ -684,7 +1079,7 @@ Taxi Area
             <div class="row align-items-center justify-content-center">
                 <div class="col-xl-7 col-xxl-6 wow fadeInLeft">
                     <div class="title-area">
-                        <span class="sub-title style2"><img src="assets/img/shape/title_shape_1.svg" alt="shape"><span class="sub-title2">WHY CHOOSE US</span></span>
+                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">WHY CHOOSE US</span></span>
                         <h2 class="sec-title">Your Trusted Taxi Service in Sri Lanka</h2>
                     </div>
                     <div class="taxi-tabs-wrapper">
@@ -769,7 +1164,7 @@ Tour Packages Area
     <section class="space" id="tour-packages">
         <div class="container">
             <div class="title-area text-center">
-                <span class="sub-title style2"><img src="assets/img/shape/title_shape_1.svg" alt="shape"><span class="sub-title2">EXPLORE SRI LANKA</span></span>
+                <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">EXPLORE SRI LANKA</span></span>
                 <h2 class="sec-title">Our Popular Tour Packages</h2>
                 <p class="sec-text">Discover the beauty and culture of Sri Lanka with our carefully crafted tour packages. From ancient cities to pristine beaches, we cover all the must-visit destinations.</p>
             </div>
@@ -1098,7 +1493,7 @@ Process Area
     <section class="position-relative overflow-hidden space-bottom">
         <div class="container">
             <div class="title-area text-center">
-                <span class="sub-title style2"><img src="assets/img/shape/title_shape_1.svg" alt="shape"><span class="sub-title2">Our Working Process</span></span>
+                <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">Our Working Process</span></span>
                 <h2 class="sec-title">Our Basic Work Process</h2>
             </div>
             <div class="process-box-wrapper style2">
@@ -1284,7 +1679,7 @@ Bloge Area
         <div class="container">
             <div class="title-area text-center">
                 <span class="sub-title style2">
-                    <img src="assets/img/shape/title_shape_1.svg" alt="shape">
+                    <img src="assets/img/logo1.png" class="icon-logo" alt="shape">
                     <span class="sub-title2">Sri Lanka Tourism</span>
                 </span>
                 <h2 class="sec-title">Beautiful Tourist Destinations</h2>
