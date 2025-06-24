@@ -57,19 +57,140 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- Custom Tour Package Styles -->
+    <!-- Clean Website Styles -->
     <style>
-        .icon-logo {
-            height: 30px;
-            width: 30px;
+        /* Global Improvements */
+        .space {
+            padding: 80px 0;
         }
+        
+        .icon-logo {
+            height: 28px;
+            width: 28px;
+        }
+        
+        .sec-title {
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .sec-text {
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+        
+        /* Hero Section */
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        
+        .hero-text {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* About Section Improvements */
+        .img-box8 {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .year-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: var(--theme-color);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .year-counter_number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+        
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .about-icon {
+            margin-right: 20px;
+            min-width: 60px;
+        }
+        
+        .about_title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Service Cards */
+        .feature-card.style-tourism {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        .feature-card.style-tourism:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card_icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: var(--theme-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card.style-tourism:hover .feature-card_icon {
+            transform: scale(1.1);
+            background: #ff6b35;
+        }
+        
+        .feature-card_title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .feature-card_text {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        /* Tour Package Cards */
         .service-card.style3 {
             background: #fff;
-            border-radius: 15px;
+            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: all 0.3s ease;
             height: 100%;
+            margin-bottom: 30px;
         }
         
         .service-card.style3:hover {
@@ -79,7 +200,7 @@
         
         .service-card_img {
             position: relative;
-            height: 250px;
+            height: 220px;
             overflow: hidden;
         }
         
@@ -96,17 +217,17 @@
         
         .service-card_overlay {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
+            top: 15px;
+            right: 15px;
+            width: 50px;
+            height: 50px;
             background: var(--theme-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 24px;
+            font-size: 20px;
         }
         
         .service-card_content {
@@ -114,9 +235,9 @@
         }
         
         .service-card_title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #1a1a1a;
         }
         
@@ -124,6 +245,7 @@
             color: var(--theme-color);
             font-weight: 600;
             margin-bottom: 20px;
+            font-size: 14px;
         }
         
         .service-features {
@@ -133,34 +255,26 @@
         }
         
         .service-features li {
-            padding: 8px 0;
+            padding: 6px 0;
             color: #666;
             font-size: 14px;
         }
         
         .service-features li i {
             color: var(--theme-color);
-            margin-right: 10px;
+            margin-right: 8px;
             font-size: 12px;
         }
         
         .service-card_price {
             text-align: center;
             margin-bottom: 25px;
-            padding: 20px 0;
+            padding: 15px 0;
             border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .price-text {
-            display: block;
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 5px;
         }
         
         .price {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 800;
             color: var(--theme-color);
             line-height: 1;
@@ -168,221 +282,68 @@
         
         .price-per {
             display: block;
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
             margin-top: 5px;
         }
         
-        .th-btn.radius-btn.w-100 {
-            width: 100% !important;
+        /* Testimonials */
+        .testi-item.style2 {
+            margin-bottom: 30px;
         }
         
-                 /* Responsive adjustments */
-         @media (max-width: 768px) {
-             .service-card_img {
-                 height: 200px;
-             }
-             
-             .service-card_content {
-                 padding: 20px;
-             }
-             
-             .service-card_title {
-                 font-size: 20px;
-             }
-         }
-         
-         /* Tourism Feature Cards */
-         .feature-card.style-tourism {
-             background: rgba(255, 255, 255, 0.95);
-             border-radius: 20px;
-             padding: 40px 30px;
-             text-align: center;
-             transition: all 0.3s ease;
-             height: 100%;
-             backdrop-filter: blur(10px);
-             border: 1px solid rgba(255, 255, 255, 0.2);
-         }
-         
-         .feature-card.style-tourism:hover {
-             transform: translateY(-10px);
-             background: rgba(255, 255, 255, 1);
-             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-         }
-         
-         .feature-card_icon {
-             width: 80px;
-             height: 80px;
-             margin: 0 auto 25px;
-             background: var(--theme-color);
-             border-radius: 50%;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             font-size: 32px;
-             color: #fff;
-             transition: all 0.3s ease;
-         }
-         
-         .feature-card.style-tourism:hover .feature-card_icon {
-             transform: scale(1.1);
-             background: #ff6b35;
-         }
-         
-         .feature-card_title {
-             font-size: 22px;
-             font-weight: 700;
-             margin-bottom: 15px;
-             color: #1a1a1a;
-         }
-         
-         .feature-card_text {
-             color: #666;
-             line-height: 1.6;
-             font-size: 14px;
-         }
-         
-         /* Destination Gallery Styles */
-         .destination-card {
-             position: relative;
-             border-radius: 20px;
-             overflow: hidden;
-             height: 300px;
-             cursor: pointer;
-             transition: all 0.3s ease;
-         }
-         
-         .destination-card.large {
-             height: 620px;
-         }
-         
-         .destination-card:hover {
-             transform: translateY(-5px);
-             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-         }
-         
-         .destination-img {
-             width: 100%;
-             height: 100%;
-             position: relative;
-             overflow: hidden;
-         }
-         
-         .destination-img img {
-             width: 100%;
-             height: 100%;
-             object-fit: cover;
-             transition: transform 0.3s ease;
-         }
-         
-         .destination-card:hover .destination-img img {
-             transform: scale(1.1);
-         }
-         
-         .destination-overlay {
-             position: absolute;
-             top: 0;
-             left: 0;
-             right: 0;
-             bottom: 0;
-             background: linear-gradient(45deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
-             display: flex;
-             align-items: flex-end;
-             padding: 30px;
-             transition: all 0.3s ease;
-         }
-         
-         .destination-card:hover .destination-overlay {
-             background: linear-gradient(45deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
-         }
-         
-         .destination-content {
-             color: #fff;
-         }
-         
-         .destination-category {
-             display: inline-block;
-             background: var(--theme-color);
-             color: #fff;
-             padding: 6px 15px;
-             border-radius: 25px;
-             font-size: 12px;
-             font-weight: 600;
-             text-transform: uppercase;
-             letter-spacing: 1px;
-             margin-bottom: 15px;
-         }
-         
-         .destination-title {
-             font-size: 28px;
-             font-weight: 700;
-             margin-bottom: 10px;
-             color: #fff;
-         }
-         
-         .destination-desc {
-             font-size: 16px;
-             margin-bottom: 15px;
-             opacity: 0.9;
-         }
-         
-         .destination-features {
-             display: flex;
-             gap: 20px;
-             flex-wrap: wrap;
-         }
-         
-         .destination-features span {
-             font-size: 14px;
-             opacity: 0.8;
-             display: flex;
-             align-items: center;
-             gap: 8px;
-         }
-         
-         .destination-features i {
-             font-size: 12px;
-         }
-         
-         /* Responsive Design */
-         @media (max-width: 992px) {
-             .destination-card.large {
-                 height: 400px;
-             }
-             
-             .feature-card.style-tourism {
-                 padding: 30px 20px;
-             }
-             
-             .feature-card_icon {
-                 width: 70px;
-                 height: 70px;
-                 font-size: 28px;
-             }
-         }
-         
-         @media (max-width: 768px) {
-             .destination-card {
-                 height: 250px;
-             }
-             
-             .destination-card.large {
-                 height: 300px;
-             }
-             
-             .destination-overlay {
-                 padding: 20px;
-             }
-             
-             .destination-title {
-                 font-size: 22px;
-             }
-             
-             .feature-card.style-tourism {
-                 padding: 25px 15px;
-             }
-         }
-     </style>
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .space {
+                padding: 60px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .service-card_img {
+                height: 180px;
+            }
+            
+            .service-card_content {
+                padding: 20px;
+            }
+            
+            .feature-card.style-tourism {
+                padding: 30px 20px;
+            }
+            
+            .feature-card_icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+            }
+        }
+        
+        /* Clean spacing and typography */
+        .title-area {
+            margin-bottom: 60px;
+        }
+        
+        .booking-form {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        /* Button improvements */
+        .th-btn.radius-btn {
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        
+        /* Section spacing */
+        section + section {
+            margin-top: 0;
+        }
+    </style>
 
 </head>
 
@@ -697,79 +658,78 @@
     <!--==============================
 Hero Area
 ==============================-->
-    <div class="th-hero-wrapper  hero-8">
-        <div class="hero-slider-8 th-carousel" id="heroSlide8" data-slide-show="1" data-md-slide-show="1" data-fade="true">
-
-            <div class="th-hero-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/hero/1.jpg">
-                    <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
-                </div>
-                <div class="container">
-                    <div class="hero-style8">
-                        <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
-                            <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
-                        </div>
-                        <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Explore Sri Lanka with </h1>
-                        <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">
-                            Comfort & Style!</h1>
-                        <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">Professional taxi services and comprehensive tourism packages. From airport transfers to guided tours of ancient temples, pristine beaches, and wildlife safaris - we make your Sri Lankan journey unforgettable.</p>
-                        <div class="btn-group" data-ani="slideinup" data-ani-delay="0.7s">
-                            <a href="#services-area" class="th-btn style3 radius-btn"><span class="btn-text">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
-                            <a href="tel:+94715739188" class="th-btn style2 radius-btn"><span class="btn-text">Call Now<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="th-hero-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/hero/3.jpg">
-                    <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
-                </div>
-                <div class="container">
-                    <div class="hero-style8">
-                        <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
-                            <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
-                        </div>
-                        <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Discover the Pearl of </h1>
-                        <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">
-                            the Indian Ocean</h1>
-                        <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">Experience Sri Lanka's rich heritage with our customized tour packages. Visit ancient Sigiriya, explore tea plantations in Nuwara Eliya, witness wildlife in Yala, and relax on pristine beaches.</p>
-                        <div class="btn-group" data-ani="slideinup" data-ani-delay="0.7s">
-                            <a href="about.html" class="th-btn style3 radius-btn"><span class="btn-text">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
-                            <a href="tel:+468254762443" class="th-btn style2 radius-btn"><span class="btn-text">Call Now<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="th-hero-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/hero/2.jpg">
-                    <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
-                </div>
-                <div class="container">
-                    <div class="hero-style8">
-                        <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
-                            <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
-                        </div>
-                        <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Your Complete Travel </h1>
-                        <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">
-                            Solution</h1>
-                        <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">From comfortable airport transfers to comprehensive tour packages, we provide everything you need for an amazing Sri Lankan adventure. Professional drivers, modern vehicles, and unforgettable experiences.</p>
-                        <div class="btn-group" data-ani="slideinup" data-ani-delay="0.7s">
-                            <a href="about.html" class="th-btn style3 radius-btn"><span class="btn-text">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
-                            <a href="tel:+468254762443" class="th-btn style2 radius-btn"><span class="btn-text">Call Now<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="th-hero-wrapper hero-8">
+        <div class="th-hero-bg" data-bg-src="assets/img/hero/1.jpg">
+            <img src="assets/img/hero/hero_overlay_2.png" alt="Hero Image">
         </div>
-        <div class="icon-box">
-            <button data-slick-prev="#heroSlide8" class="slick-arrow default"><i class="fa-regular fa-arrow-left"></i></button>
-            <button data-slick-next="#heroSlide8" class="slick-arrow default"><i class="fa-regular fa-arrow-right"></i></button>
+        <div class="container">
+            <div class="hero-style8">
+                <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
+                    <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
+                </div>
+                <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Explore Sri Lanka with </h1>
+                <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">Comfort & Style!</h1>
+                <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.6s">Professional taxi services and comprehensive tourism packages. From airport transfers to guided tours of ancient temples, pristine beaches, and wildlife safaris.</p>
+                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.7s">
+                    <a href="#services-area" class="th-btn style3 radius-btn"><span class="btn-text">Our Services<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
+                    <a href="#booking-area" class="th-btn style2 radius-btn"><span class="btn-text">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></span></a>
+                </div>
+            </div>
         </div>
     </div>
     <!--==============================
-Booking Area  
+About Area  
+==============================-->
+    <section class="space" id="about-sec">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 mb-40 mb-xl-0">
+                    <div class="img-box8 wow fadeInLeft">
+                        <div class="img1">
+                            <img src="assets/img/hero/taxi5.png" alt="Professional Taxi Service in Sri Lanka">
+                        </div>
+                        <div class="year-counter">
+                            <div class="year-counter_number">15+</div>
+                            <div class="media-body"><span class="year-counter_title">Years Serving Sri Lanka</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 wow fadeInRight">
+                    <div class="title-area mb-35">
+                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">ABOUT C&A TOURS</span></span>
+                        <h2 class="sec-title">Your Trusted Travel Partner in Sri Lanka</h2>
+                        <p class="mb-30">With over 15 years of experience, C&A Tours has been providing reliable and comfortable transportation services across Sri Lanka. We specialize in both taxi services and comprehensive tourism packages, ensuring your journey is memorable and hassle-free.</p>
+                    </div>
+                    <div class="about-feature-wrap style2">
+                        <div class="about-feature">
+                            <div class="about-icon">
+                                <img src="assets/img/icon/about-feature_1.svg" alt="Icon">
+                            </div>
+                            <div class="media-body">
+                                <h3 class="about_title">Professional Service</h3>
+                                <p class="about_text">Licensed drivers, well-maintained vehicles, and 24/7 customer support for all your travel needs.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about_icon">
+                                <img src="assets/img/icon/about-feature_2.svg" alt="Icon">
+                            </div>
+                            <div class="media-body">
+                                <h3 class="about_title">Local Expertise</h3>
+                                <p class="about_text">Our guides know Sri Lanka inside out - from hidden gems to popular attractions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group style2">
+                        <a href="#tour-packages" class="th-btn radius-btn">View Tours<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        <span class="about-call-text"> <a href="tel:+94715739188" class="about-call-btn"><i class="fa-solid fa-phone"></i></a>+94 71 573 9188</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--==============================
+Quick Booking Area  
 ==============================-->
     <div class="booking-section">
         <div class="container">
@@ -825,150 +785,7 @@ Booking Area
         </div>
     </div>
 
-    <!--==============================
-Destinations Gallery Area  
-==============================-->
-    <section class="space" id="destinations-gallery">
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="sub-title style2">
-                    <img src="assets/img/logo1.png" class="icon-logo" alt="shape">
-                    <span class="sub-title2">MUST-VISIT DESTINATIONS</span>
-                </span>
-                <h2 class="sec-title">Explore Sri Lanka's Most Iconic Places</h2>
-                <p class="sec-text">From ancient wonders to natural beauty, discover the diverse attractions that make Sri Lanka a world-class destination</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="destination-card large wow fadeInUp">
-                        <div class="destination-img">
-                            <img src="assets/img/blog/sigiriya.jpg" alt="Sigiriya Rock Fortress">
-                            <div class="destination-overlay">
-                                <div class="destination-content">
-                                    <span class="destination-category">UNESCO World Heritage</span>
-                                    <h3 class="destination-title">Sigiriya Rock Fortress</h3>
-                                    <p class="destination-desc">Ancient rock citadel with stunning frescoes and breathtaking views</p>
-                                    <div class="destination-features">
-                                        <span><i class="fas fa-map-marker-alt"></i> Central Province</span>
-                                        <span><i class="fas fa-clock"></i> 3-4 hours</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6">
-                    <div class="row g-4">
-                        <div class="col-12">
-                            <div class="destination-card wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="destination-img">
-                                    <img src="assets/img/blog/Kandy-tooth-temple.jpg" alt="Temple of the Tooth Kandy">
-                                    <div class="destination-overlay">
-                                        <div class="destination-content">
-                                            <span class="destination-category">Sacred Site</span>
-                                            <h3 class="destination-title">Temple of the Tooth</h3>
-                                            <p class="destination-desc">Most sacred Buddhist temple in Sri Lanka</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-6">
-                            <div class="destination-card wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="destination-img">
-                                    <img src="assets/img/blog/ella.jpg" alt="Ella Nine Arch Bridge">
-                                    <div class="destination-overlay">
-                                        <div class="destination-content">
-                                            <span class="destination-category">Hill Country</span>
-                                            <h3 class="destination-title">Ella</h3>
-                                            <p class="destination-desc">Scenic beauty & railway heritage</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-6">
-                            <div class="destination-card wow fadeInUp" data-wow-delay="0.6s">
-                                <div class="destination-img">
-                                    <img src="assets/img/blog/yala.jpg" alt="Yala National Park">
-                                    <div class="destination-overlay">
-                                        <div class="destination-content">
-                                            <span class="destination-category">Wildlife</span>
-                                            <h3 class="destination-title">Yala Safari</h3>
-                                            <p class="destination-desc">Leopard & elephant spotting</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="destination-card wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="destination-img">
-                            <img src="assets/img/blog/gallefort.jpg" alt="Galle Fort">
-                            <div class="destination-overlay">
-                                <div class="destination-content">
-                                    <span class="destination-category">Colonial Heritage</span>
-                                    <h3 class="destination-title">Galle Fort</h3>
-                                    <p class="destination-desc">Dutch colonial architecture meets ocean views</p>
-                                    <div class="destination-features">
-                                        <span><i class="fas fa-map-marker-alt"></i> Southern Coast</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="destination-card wow fadeInUp" data-wow-delay="1s">
-                        <div class="destination-img">
-                            <img src="assets/img/blog/little-england.jpg" alt="Nuwara Eliya">
-                            <div class="destination-overlay">
-                                <div class="destination-content">
-                                    <span class="destination-category">Tea Country</span>
-                                    <h3 class="destination-title">Nuwara Eliya</h3>
-                                    <p class="destination-desc">Little England with tea plantations and cool climate</p>
-                                    <div class="destination-features">
-                                        <span><i class="fas fa-thermometer-half"></i> 16°C avg</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="destination-card wow fadeInUp" data-wow-delay="1.2s">
-                        <div class="destination-img">
-                            <img src="assets/img/blog/mirissa.jpg" alt="Mirissa Beach">
-                            <div class="destination-overlay">
-                                <div class="destination-content">
-                                    <span class="destination-category">Beach Paradise</span>
-                                    <h3 class="destination-title">Mirissa Beach</h3>
-                                    <p class="destination-desc">Whale watching and pristine golden sands</p>
-                                    <div class="destination-features">
-                                        <span><i class="fas fa-swimmer"></i> Swimming</span>
-                                        <span><i class="fas fa-fish"></i> Whale Watching</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-50">
-                <a href="#tour-packages" class="th-btn style3 radius-btn">Explore All Destinations<i class="fa-regular fa-arrow-right ms-2"></i></a>
-            </div>
-        </div>
-    </section>
+    
     
     <!--==============================
 Services Area  
@@ -977,8 +794,8 @@ Services Area
         <div class="container">
             <div class="title-area text-center">
                 <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">OUR SERVICES</span></span>
-                <h2 class="sec-title text-black">Professional Transportation Services</h2>
-                <p class="sec-text text-black">From quick city rides to comprehensive tour packages, we provide reliable and comfortable transportation solutions across Sri Lanka.</p>
+                <h2 class="sec-title text-white">Professional Transportation Services</h2>
+                <p class="sec-text text-white">From quick city rides to comprehensive tour packages, we provide reliable and comfortable transportation solutions across Sri Lanka.</p>
             </div>
             
             <div class="row gy-4 justify-content-center">
@@ -1033,16 +850,15 @@ Services Area
             </div>
         </div>
     </section>
-
     <!--==============================
 Tour Packages Area  
 ==============================-->
     <section class="space" id="tour-packages">
         <div class="container">
             <div class="title-area text-center">
-                <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">EXPLORE SRI LANKA</span></span>
-                <h2 class="sec-title">Our Popular Tour Packages</h2>
-                <p class="sec-text">Discover the beauty and culture of Sri Lanka with our carefully crafted tour packages. From ancient cities to pristine beaches, we cover all the must-visit destinations.</p>
+                <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">TOUR PACKAGES</span></span>
+                <h2 class="sec-title">Explore Sri Lanka's Best Destinations</h2>
+                <p class="sec-text">Carefully crafted tour packages to discover the beauty and culture of Sri Lanka with professional guides.</p>
             </div>
             
             <div class="row gy-4">
@@ -1057,16 +873,14 @@ Tour Packages Area
                             </div>
                         </div>
                         <div class="service-card_content">
-                            <h3 class="service-card_title">Cultural Triangle Tour</h3>
+                            <h3 class="service-card_title">Cultural Triangle</h3>
                             <p class="service-card_text">3 Days / 2 Nights</p>
                             <ul class="service-features">
                                 <li><i class="fas fa-check"></i> Sigiriya Rock Fortress</li>
                                 <li><i class="fas fa-check"></i> Dambulla Cave Temple</li>
                                 <li><i class="fas fa-check"></i> Polonnaruwa Ancient City</li>
-                                <li><i class="fas fa-check"></i> Professional Guide</li>
                             </ul>
                             <div class="service-card_price">
-                                <span class="price-text">Starting from</span>
                                 <span class="price">$299</span>
                                 <span class="price-per">per person</span>
                             </div>
@@ -1086,16 +900,14 @@ Tour Packages Area
                             </div>
                         </div>
                         <div class="service-card_content">
-                            <h3 class="service-card_title">Hill Country Adventure</h3>
+                            <h3 class="service-card_title">Hill Country</h3>
                             <p class="service-card_text">4 Days / 3 Nights</p>
                             <ul class="service-features">
                                 <li><i class="fas fa-check"></i> Nuwara Eliya Tea Plantations</li>
                                 <li><i class="fas fa-check"></i> Ella Nine Arch Bridge</li>
-                                <li><i class="fas fa-check"></i> Horton Plains National Park</li>
-                                <li><i class="fas fa-check"></i> Train Journey Experience</li>
+                                <li><i class="fas fa-check"></i> Scenic Train Journey</li>
                             </ul>
                             <div class="service-card_price">
-                                <span class="price-text">Starting from</span>
                                 <span class="price">$399</span>
                                 <span class="price-per">per person</span>
                             </div>
@@ -1115,104 +927,15 @@ Tour Packages Area
                             </div>
                         </div>
                         <div class="service-card_content">
-                            <h3 class="service-card_title">Wildlife Safari Package</h3>
+                            <h3 class="service-card_title">Wildlife Safari</h3>
                             <p class="service-card_text">3 Days / 2 Nights</p>
                             <ul class="service-features">
-                                <li><i class="fas fa-check"></i> Yala National Park Safari</li>
+                                <li><i class="fas fa-check"></i> Yala National Park</li>
                                 <li><i class="fas fa-check"></i> Udawalawe Elephant Park</li>
-                                <li><i class="fas fa-check"></i> Bird Watching Tours</li>
-                                <li><i class="fas fa-check"></i> Nature Photography</li>
+                                <li><i class="fas fa-check"></i> Wildlife Photography</li>
                             </ul>
                             <div class="service-card_price">
-                                <span class="price-text">Starting from</span>
                                 <span class="price">$349</span>
-                                <span class="price-per">per person</span>
-                            </div>
-                            <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card style3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-card_img">
-                            <img src="assets/img/blog/mirissa.jpg" alt="Beach Paradise">
-                            <div class="service-card_overlay">
-                                <div class="service-card_icon">
-                                    <i class="fas fa-umbrella-beach"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-card_content">
-                            <h3 class="service-card_title">Beach Paradise Tour</h3>
-                            <p class="service-card_text">5 Days / 4 Nights</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check"></i> Mirissa Whale Watching</li>
-                                <li><i class="fas fa-check"></i> Unawatuna Beach</li>
-                                <li><i class="fas fa-check"></i> Galle Fort Exploration</li>
-                                <li><i class="fas fa-check"></i> Water Sports Activities</li>
-                            </ul>
-                            <div class="service-card_price">
-                                <span class="price-text">Starting from</span>
-                                <span class="price">$449</span>
-                                <span class="price-per">per person</span>
-                            </div>
-                            <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card style3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="service-card_img">
-                            <img src="assets/img/blog/Kandy-tooth-temple.jpg" alt="Spiritual Journey">
-                            <div class="service-card_overlay">
-                                <div class="service-card_icon">
-                                    <i class="fas fa-pray"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-card_content">
-                            <h3 class="service-card_title">Spiritual Journey</h3>
-                            <p class="service-card_text">3 Days / 2 Nights</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check"></i> Temple of the Tooth - Kandy</li>
-                                <li><i class="fas fa-check"></i> Adam's Peak Pilgrimage</li>
-                                <li><i class="fas fa-check"></i> Ancient Buddhist Temples</li>
-                                <li><i class="fas fa-check"></i> Meditation Sessions</li>
-                            </ul>
-                            <div class="service-card_price">
-                                <span class="price-text">Starting from</span>
-                                <span class="price">$279</span>
-                                <span class="price-per">per person</span>
-                            </div>
-                            <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card style3 wow fadeInUp" data-wow-delay="1s">
-                        <div class="service-card_img">
-                            <img src="assets/img/blog/gallefort.jpg" alt="Grand Island Tour">
-                            <div class="service-card_overlay">
-                                <div class="service-card_icon">
-                                    <i class="fas fa-globe-asia"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-card_content">
-                            <h3 class="service-card_title">Grand Island Tour</h3>
-                            <p class="service-card_text">10 Days / 9 Nights</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check"></i> Complete Island Coverage</li>
-                                <li><i class="fas fa-check"></i> All Major Attractions</li>
-                                <li><i class="fas fa-check"></i> Cultural Experiences</li>
-                                <li><i class="fas fa-check"></i> Wildlife & Nature</li>
-                            </ul>
-                            <div class="service-card_price">
-                                <span class="price-text">Starting from</span>
-                                <span class="price">$1299</span>
                                 <span class="price-per">per person</span>
                             </div>
                             <a href="#booking-area" class="th-btn radius-btn w-100">Book Now<i class="fa-regular fa-arrow-right ms-2"></i></a>
@@ -1222,8 +945,8 @@ Tour Packages Area
             </div>
             
             <div class="text-center mt-50">
-                <p class="mb-3"><strong>All packages include:</strong> Professional English-speaking driver/guide, comfortable air-conditioned vehicle, entrance fees, and hotel recommendations.</p>
-                <a href="#booking-area" class="th-btn style3 radius-btn">Customize Your Tour<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                <p class="mb-4"><strong>All packages include:</strong> Professional guide, comfortable vehicle, entrance fees & hotel recommendations.</p>
+                <a href="#booking-area" class="th-btn style3 radius-btn">View All Tours<i class="fa-regular fa-arrow-right ms-2"></i></a>
             </div>
         </div>
     </section>
@@ -1364,79 +1087,17 @@ Booking Area
         </div>
     </div>
     <!--==============================
-Process Area  
+Testimonials Area  
 ==============================-->
-    <section class="position-relative overflow-hidden space-bottom">
+    <section class="space" data-bg-src="assets/img/bg/testimonial_bg_2.jpg">
         <div class="container">
             <div class="title-area text-center">
-                <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">Our Working Process</span></span>
-                <h2 class="sec-title">Our Basic Work Process</h2>
+                <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">TESTIMONIALS</span></span>
+                <h2 class="sec-title text-white">What Our Customers Say</h2>
             </div>
-            <div class="process-box-wrapper style2">
-                <div class="row gy-30 justify-content-center">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="process-item wow fadeInLeft" data-bg-src="assets/img/shape/process_shape.png">
-                            <div class="process-item_icon">
-                                <img src="assets/img/icon/process_1_1.svg" alt="">
-                            </div>
-                            <h3 class="process-item_title">Searching Taxi</h3>
-                            <p class="process-item_text">Taxi booking process is the process of requesting a taxi service.</p>
-                            <span class="process-item_num">01</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="process-item wow fadeInUp" data-bg-src="assets/img/shape/process_shape.png">
-                            <div class="process-item_icon">
-                                <img src="assets/img/icon/process_1_2.svg" alt="">
-                            </div>
-                            <h3 class="process-item_title">Book A Taxi</h3>
-                            <p class="process-item_text">The user contacts the provider through a phone call, an app, a website.</p>
-                            <span class="process-item_num">02</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="process-item wow fadeInRight" data-bg-src="assets/img/shape/process_shape.png">
-                            <div class="process-item_icon">
-                                <img src="assets/img/icon/process_1_3.svg" alt="">
-                            </div>
-                            <h3 class="process-item_title">Arrive safely</h3>
-                            <p class="process-item_text">The user provides their pickup location, and preferred time of arrival.</p>
-                            <span class="process-item_num">03</span>
-                        </div>
-                    </div>
-                    <span class="process-line">
-                        <img src="assets/img/shape/process_line_3.png" alt="line">
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--==============================
-Price Area  
-==============================-->
-    <!--==============================
-Testimonial Area  
-==============================-->
-    <section class="testi-area bg-top-center space-top" data-bg-src="assets/img/bg/testimonial_bg_2.jpg">
-        <div class="container">
-            <div class="row justify-content-center justify-content-lg-between align-items-center">
-                <div class="col-lg-8">
-                    <div class="title-area text-center text-lg-start">
-                        <span class="sub-title style2"><img src="assets/img/logo1.png" class="icon-logo" alt="shape"><span class="sub-title2">Our Testimonials</span></span>
-                        <h2 class="sec-title text-white">Our Happy Client's Review</h2>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="sec-btn">
-                        <div class="icon-item">
-                            <button data-slick-prev="#testiSlide2" class="slick-arrow default"><i class="far fa-arrow-left"></i></button>
-                            <button data-slick-next="#testiSlide2" class="slick-arrow default"><i class="far fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row slider-shadow th-carousel" id="testiSlide2" data-slide-show="3" data-lg-slide-show="2" data-md-slide-show="2">
-                <div class="col-md-6 col-xl-4">
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
                     <div class="testi-item style2 wow fadeInUp">
                         <div class="testi-item_star">
                             <i class="fa-solid fa-star-sharp"></i>
@@ -1455,16 +1116,14 @@ Testimonial Area
                                     <h3 class="testi-item_name">Sarah Johnson</h3>
                                     <p class="testi-item_desig">Tourist from UK</p>
                                 </div>
-
                                 <div class="testi-item_quote"><img src="assets/img/icon/quote_2.svg" alt="quote"></div>
                             </div>
                         </div>
-                        <div class="testi-shape"><img src="assets/img/testimonial/testi_shape.png" alt=""></div>
-                        <div class="testi-shape2"><img src="assets/img/testimonial/testi_map.png" alt=""></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="testi-item style2 wow fadeInUp">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="testi-item style2 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="testi-item_star">
                             <i class="fa-solid fa-star-sharp"></i>
                             <i class="fa-solid fa-star-sharp"></i>
@@ -1482,16 +1141,14 @@ Testimonial Area
                                     <h3 class="testi-item_name">Michael Chen</h3>
                                     <p class="testi-item_desig">Tourist from Australia</p>
                                 </div>
-
                                 <div class="testi-item_quote"><img src="assets/img/icon/quote_2.svg" alt="quote"></div>
                             </div>
                         </div>
-                        <div class="testi-shape"><img src="assets/img/testimonial/testi_shape.png" alt=""></div>
-                        <div class="testi-shape2"><img src="assets/img/testimonial/testi_map.png" alt=""></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="testi-item style2 wow fadeInUp">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="testi-item style2 wow fadeInUp" data-wow-delay="0.4s">
                         <div class="testi-item_star">
                             <i class="fa-solid fa-star-sharp"></i>
                             <i class="fa-solid fa-star-sharp"></i>
@@ -1509,74 +1166,15 @@ Testimonial Area
                                     <h3 class="testi-item_name">Priya Patel</h3>
                                     <p class="testi-item_desig">Tourist from India</p>
                                 </div>
-
                                 <div class="testi-item_quote"><img src="assets/img/icon/quote_2.svg" alt="quote"></div>
                             </div>
                         </div>
-                        <div class="testi-shape"><img src="assets/img/testimonial/testi_shape.png" alt=""></div>
-                        <div class="testi-shape2"><img src="assets/img/testimonial/testi_map.png" alt=""></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="testi-item style2 wow fadeInUp">
-                        <div class="testi-item_star">
-                            <i class="fa-solid fa-star-sharp"></i>
-                            <i class="fa-solid fa-star-sharp"></i>
-                            <i class="fa-solid fa-star-sharp"></i>
-                            <i class="fa-solid fa-star-sharp"></i>
-                            <i class="fa-solid fa-star-sharp"></i>
-                        </div>
-                        <p class="testi-item_text">Efficiently whiteboard turnkey data through compelling functionalitie. Assertively foster strategic human capital through multidisc meta-services.</p>
-                        <div class="testi-item_wrapp">
-                            <div class="testi-item_profile">
-                                <div class="testi-item_img">
-                                    <img src="assets/img/testimonial/testi_3_4.jpg" alt="Avater">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="testi-item_name">Marcos Manuel </h3>
-                                    <p class="testi-item_desig">Bank Manager</p>
-                                </div>
-
-                                <div class="testi-item_quote"><img src="assets/img/icon/quote_2.svg" alt="quote"></div>
-                            </div>
-                        </div>
-                        <div class="testi-shape"><img src="assets/img/testimonial/testi_shape.png" alt=""></div>
-                        <div class="testi-shape2"><img src="assets/img/testimonial/testi_map.png" alt=""></div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
-    <!--==============================
-Brand Area  
-==============================-->
-    <div class="space overflow-hidden">
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="brand-title">
-                    <span class="counter-card_number"><span class="counter-number">10</span>k+<span class="counter-title">Our Trusted Partner</span></span>
-                </span>
-            </div>
-            <div class="row brand-slide th-carousel" data-slide-show="5" data-lg-slide-show="4" data-md-slide-show="3" data-sm-slide-show="2" data-xs-slide-show="2">
-                <div class="col-auto brand-img style2  wow fadeInLeft">
-                    <img src="assets/img/brand/brand_1_1.png" alt="Brand Logo">
-                </div>
-                <div class="col-auto brand-img style2  wow fadeInLeft">
-                    <img src="assets/img/brand/brand_1_2.png" alt="Brand Logo">
-                </div>
-                <div class="col-auto brand-img style2  wow fadeInLeft">
-                    <img src="assets/img/brand/brand_1_3.png" alt="Brand Logo">
-                </div>
-                <div class="col-auto brand-img style2  wow fadeInLeft">
-                    <img src="assets/img/brand/brand_1_4.png" alt="Brand Logo">
-                </div>
-                <div class="col-auto brand-img style2  wow fadeInLeft">
-                    <img src="assets/img/brand/brand_1_5.png" alt="Brand Logo">
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!--==============================
 Contact Info Area  
 ==============================-->
