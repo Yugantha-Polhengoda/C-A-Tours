@@ -1269,11 +1269,11 @@ Booking Area
                     </div>
                 </div>
                 <div class="col-xl-6">
-                    <form onsubmit="return submitToWhatsApp(event)" class="booking-form4 wow fadeInUp" data-bg-src="assets/img/shape/booking_shape.png">
+                    <form onsubmit="return submitMainBooking(event)" class="booking-form4 wow fadeInUp" data-bg-src="assets/img/shape/booking_shape.png">
                         <h3>Book Your Service</h3>
                         <div class="row">
                             <div class="form-group col-12">
-                                <select name="service-type" id="service-type" class="form-select nice-select" onchange="toggleFormFields()">
+                                <select name="service-type" id="main-service-type" class="form-select nice-select" onchange="toggleMainFormFields()">
                                     <option value="" disabled selected hidden>Select Service Type</option>
                                     <option value="taxi">Taxi Service</option>
                                     <option value="tour">Tour Package</option>
@@ -1281,19 +1281,19 @@ Booking Area
                                 <i class="fa-light fa-list"></i>
                             </div>
                             <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="text" id="text" placeholder="Your Name" required>
+                                <input type="text" class="form-control" name="text" id="main-text" placeholder="Your Name" required>
                                 <i class="fa-light fa-user"></i>
                             </div>
                             <div class="form-group col-sm-6">
-                                <input type="number" class="form-control" name="phone" id="phone" placeholder="Phone Number" required>
+                                <input type="number" class="form-control" name="phone" id="main-phone" placeholder="Phone Number" required>
                                 <i class="fa-light fa-phone-rotary"></i>
                             </div>
                             <div class="form-group col-12">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                                <input type="email" class="form-control" name="email" id="main-email" placeholder="Email Address">
                                 <i class="fa-light fa-envelope"></i>
                             </div>
                             <div class="form-group col-12">
-                                <select name="passenger" id="passenger" class="form-select nice-select">
+                                <select name="passenger" id="main-passenger" class="form-select nice-select">
                                     <option value="" disabled selected hidden>Number of Passengers</option>
                                     <option value="1">1 Passenger</option>
                                     <option value="2">2 Passengers</option>
@@ -1304,24 +1304,24 @@ Booking Area
                             </div>
                             
                             <!-- Taxi Service Fields -->
-                            <div id="taxi-fields" style="display: none; width: 100%;">
+                            <div id="main-taxi-fields" style="display: none; width: 100%;">
                                 <div class="row">
                                     <div class="form-group col-sm-6">
-                                        <input type="text" class="form-control" name="s-destination" id="s-destination" placeholder="Pickup Location">
+                                        <input type="text" class="form-control" name="s-destination" id="main-s-destination" placeholder="Pickup Location">
                                         <i class="fa-sharp fa-regular fa-location-dot"></i>
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <input type="text" class="form-control" name="e-destination" id="e-destination" placeholder="Drop-off Location">
+                                        <input type="text" class="form-control" name="e-destination" id="main-e-destination" placeholder="Drop-off Location">
                                         <i class="fa-sharp fa-regular fa-location-dot"></i>
                                     </div>
                                 </div>
                             </div>
                             
                             <!-- Tour Package Fields -->
-                            <div id="tour-fields" style="display: none; width: 100%;">
+                            <div id="main-tour-fields" style="display: none; width: 100%;">
                                 <div class="row">
                                     <div class="form-group col-12">
-                                        <select name="tour-package" id="tour-package" class="form-select nice-select">
+                                        <select name="tour-package" id="main-tour-package" class="form-select nice-select">
                                             <option value="" disabled selected hidden>Select Tour Package</option>
                                             <option value="cultural-triangle">Cultural Triangle Tour - 3D/2N</option>
                                             <option value="hill-country">Hill Country Adventure - 4D/3N</option>
@@ -1333,23 +1333,23 @@ Booking Area
                                         </select>
                                     </div>
                                     <div class="form-group col-12">
-                                        <input type="text" class="form-control" name="tour-duration" id="tour-duration" placeholder="Preferred Duration (e.g., 5 days)">
+                                        <input type="text" class="form-control" name="tour-duration" id="main-tour-duration" placeholder="Preferred Duration (e.g., 5 days)">
                                         <i class="fa-light fa-calendar-week"></i>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="form-group col-sm-6">
-                                <input type="text" class="date-pick form-control" name="date" id="date-pick" placeholder="Select Date" required>
+                                <input type="text" class="date-pick form-control" name="date" id="main-date-pick" placeholder="Select Date" required>
                                 <i class="fa-light fa-calendar-days"></i>
                             </div>
                             <div class="form-group col-sm-6">
-                                <input type="text" class="time-pick form-control" name="time" id="time-pick" placeholder="Select Time">
+                                <input type="text" class="time-pick form-control" name="time" id="main-time-pick" placeholder="Select Time">
                                 <i class="fa-light fa-clock"></i>
                             </div>
                             
                             <div class="form-group col-12">
-                                <textarea class="form-control" name="special-requests" id="special-requests" rows="3" placeholder="Special Requests or Additional Information"></textarea>
+                                <textarea class="form-control" name="special-requests" id="main-special-requests" rows="3" placeholder="Special Requests or Additional Information"></textarea>
                                 <i class="fa-light fa-message"></i>
                             </div>
 
@@ -1795,6 +1795,156 @@ Contact Info Area
         
         const message = messageParts.join("%0A"); // %0A is the URL encoding for newline
         const whatsappURL = `https://wa.me/94768971805?text=${message}`;
+        window.open(whatsappURL, '_blank');
+        
+        return false;
+    }
+    
+    // Main booking form field toggle
+    function toggleMainFormFields() {
+        const serviceType = document.getElementById('main-service-type').value;
+        const taxiFields = document.getElementById('main-taxi-fields');
+        const tourFields = document.getElementById('main-tour-fields');
+        
+        if (serviceType === 'taxi') {
+            taxiFields.style.display = 'block';
+            tourFields.style.display = 'none';
+        } else if (serviceType === 'tour') {
+            taxiFields.style.display = 'none';
+            tourFields.style.display = 'block';
+        } else {
+            taxiFields.style.display = 'none';
+            tourFields.style.display = 'none';
+        }
+    }
+    
+    // Main booking form submission
+    function submitMainBooking(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Collect common form data from main booking form
+        const serviceTypeElement = document.getElementById('main-service-type');
+        const passengerElement = document.getElementById('main-passenger');
+        
+        // Get service type with fallback for nice-select
+        let serviceType = 'Not specified';
+        if (serviceTypeElement) {
+            serviceType = serviceTypeElement.value || 
+                         serviceTypeElement.getAttribute('data-value') || 
+                         'Not specified';
+            
+            if (serviceType === 'Not specified' || serviceType === '') {
+                const niceSelectDisplay = serviceTypeElement.parentElement?.querySelector('.nice-select .current');
+                if (niceSelectDisplay && niceSelectDisplay.textContent !== 'Select Service Type') {
+                    serviceType = niceSelectDisplay.textContent.toLowerCase().includes('taxi') ? 'taxi' : 'tour';
+                }
+            }
+        }
+        
+        // Get passenger count with fallback for nice-select
+        let passengers = '1';
+        if (passengerElement) {
+            passengers = passengerElement.value || 
+                        passengerElement.getAttribute('data-value') || 
+                        '1';
+            
+            if (passengers === '1' || passengers === '') {
+                const niceSelectDisplay = passengerElement.parentElement?.querySelector('.nice-select .current');
+                if (niceSelectDisplay && niceSelectDisplay.textContent !== 'Number of Passengers') {
+                    passengers = niceSelectDisplay.textContent;
+                }
+            }
+        }
+        
+        const name = document.getElementById('main-text')?.value || 'Not provided';
+        const phone = document.getElementById('main-phone')?.value || 'Not provided';
+        const email = document.getElementById('main-email')?.value || 'Not provided';
+        const date = document.getElementById('main-date-pick')?.value || 'Not provided';
+        const time = document.getElementById('main-time-pick')?.value || 'Not provided';
+        const specialRequests = document.getElementById('main-special-requests')?.value || 'None';
+        
+        // Debug logging
+        console.log('Service Type:', serviceType);
+        console.log('Form data:', { name, phone, email, passengers, date, time, specialRequests });
+        
+        let messageParts = [];
+        
+        if (serviceType === 'taxi') {
+            // Taxi booking message
+            const pickup = document.getElementById('main-s-destination')?.value || 'Not provided';
+            const destination = document.getElementById('main-e-destination')?.value || 'Not provided';
+            
+            console.log('Taxi data:', { pickup, destination });
+            
+            messageParts = [
+                "*🚖 New Taxi Booking Request*",
+                "",
+                `*Name:* ${encodeURIComponent(name)}`,
+                `*Phone:* ${encodeURIComponent(phone)}`,
+                `*Email:* ${encodeURIComponent(email)}`,
+                `*Passengers:* ${encodeURIComponent(passengers)}`,
+                `*Pickup Location:* ${encodeURIComponent(pickup)}`,
+                `*Drop-off Location:* ${encodeURIComponent(destination)}`,
+                `*Date:* ${encodeURIComponent(date)}`,
+                `*Time:* ${encodeURIComponent(time)}`,
+                `*Special Requests:* ${encodeURIComponent(specialRequests)}`,
+                "",
+                "I would like to book a taxi service with the above details."
+            ];
+        } else if (serviceType === 'tour') {
+            // Tour package booking message - Get values with fallback methods
+            const tourPackageElement = document.getElementById('main-tour-package');
+            const tourDurationElement = document.getElementById('main-tour-duration');
+            
+            console.log('Tour package element:', tourPackageElement);
+            console.log('Tour duration element:', tourDurationElement);
+            
+            // Try multiple methods to get the select value (nice-select plugin might interfere)
+            let tourPackage = 'Not specified';
+            if (tourPackageElement) {
+                tourPackage = tourPackageElement.value || 
+                            tourPackageElement.getAttribute('data-value') || 
+                            (tourPackageElement.selectedOptions && tourPackageElement.selectedOptions[0] ? tourPackageElement.selectedOptions[0].value : '') ||
+                            'Not specified';
+                
+                // If still not found, try to get from the nice-select display
+                if (tourPackage === 'Not specified' || tourPackage === '') {
+                    const niceSelectDisplay = tourPackageElement.parentElement?.querySelector('.nice-select .current');
+                    if (niceSelectDisplay && niceSelectDisplay.textContent !== 'Select Tour Package') {
+                        tourPackage = niceSelectDisplay.textContent;
+                    }
+                }
+            }
+            
+            const tourDuration = tourDurationElement?.value || 'Not specified';
+            
+            console.log('Tour data:', { tourPackage, tourDuration });
+            
+            messageParts = [
+                "*🏝️ New Tour Package Booking Request*",
+                "",
+                `*Name:* ${encodeURIComponent(name)}`,
+                `*Phone:* ${encodeURIComponent(phone)}`,
+                `*Email:* ${encodeURIComponent(email)}`,
+                `*Passengers:* ${encodeURIComponent(passengers)}`,
+                `*Tour Package:* ${encodeURIComponent(tourPackage)}`,
+                `*Preferred Duration:* ${encodeURIComponent(tourDuration)}`,
+                `*Start Date:* ${encodeURIComponent(date)}`,
+                `*Time:* ${encodeURIComponent(time)}`,
+                `*Special Requests:* ${encodeURIComponent(specialRequests)}`,
+                "",
+                "I would like to book a tour package with the above details. Please provide more information about pricing and itinerary."
+            ];
+        } else {
+            alert('Please select a service type first.');
+            return false;
+        }
+        
+        const message = messageParts.join("%0A"); // %0A is the URL encoding for newline
+        console.log('Final message:', message);
+        
+        const whatsappURL = `https://wa.me/94768971805?text=${message}`;
+        console.log('WhatsApp URL:', whatsappURL);
         window.open(whatsappURL, '_blank');
         
         return false;
