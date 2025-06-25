@@ -707,7 +707,7 @@ Hero Area
                 <div class="container">
                     <div class="hero-style8">
                         <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
-                            <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
+                            <a href="https://www.youtube.com/watch?v=q0mbKsKG-ng" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
                         </div>
                         <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Explore Sri Lanka with </h1>
                         <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">
@@ -728,7 +728,7 @@ Hero Area
                 <div class="container">
                     <div class="hero-style8">
                         <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
-                            <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
+                            <a href="https://www.youtube.com/watch?v=8g9ccCkT-u0" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
                         </div>
                         <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Discover the Pearl of </h1>
                         <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">
@@ -749,7 +749,7 @@ Hero Area
                 <div class="container">
                     <div class="hero-style8">
                         <div class="video-btn" data-ani="slideindown" data-ani-delay="0.2s">
-                            <a href="https://www.youtube.com/watch?v=CcpvU_pzR-s" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
+                            <a href="https://www.youtube.com/watch?v=_0bCo7Spcjs" class="hero-play-btn popup-video"><i class="fas fa-play"></i></a>
                         </div>
                         <h1 class="hero-title mb-0" data-ani="slideinleft" data-ani-delay="0.4s">Your Complete Travel </h1>
                         <h1 class="hero-title text-theme" data-ani="slideinleft" data-ani-delay="0.5s">
@@ -1765,6 +1765,19 @@ Contact Info Area
 ============================== -->
     <!-- Enhanced Booking Script -->
     <script>
+    // Preloader timeout - Hide after maximum 3 seconds regardless of load status
+    $(document).ready(function() {
+        var preloaderTimeout = setTimeout(function() {
+            $('.preloader').fadeOut(500); // Fade out over 500ms
+        }, 3000); // 3 seconds max
+        
+        // If page loads before timeout, clear the timeout and hide preloader
+        $(window).on('load', function() {
+            clearTimeout(preloaderTimeout);
+            $('.preloader').fadeOut(500);
+        });
+    });
+    
     // Hero booking form submission
     function submitHeroBooking(event) {
         event.preventDefault(); // Prevent default form submission
