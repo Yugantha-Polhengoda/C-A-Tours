@@ -31,7 +31,13 @@
   /*
 
   /*---------- 01. On Load Function ----------*/
+  // Fallback: ensure preloader hides after max 10s
+  var preloaderTimeout = setTimeout(function () {
+    $('.preloader:visible').fadeOut();
+  }, 10000);
+
   $(window).on('load', function () {
+    clearTimeout(preloaderTimeout);
     $('.preloader').fadeOut();
   });
 

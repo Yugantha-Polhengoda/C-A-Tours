@@ -1,0 +1,12 @@
+# robots.txt for C&A Tours and Taxi
+# Learn more: https://developers.google.com/search/docs/crawling-indexing/robots/intro
+
+User-agent: *
+Allow: /
+
+# Do not index error page
+Disallow: /error.html
+
+Sitemap: https://www.candatours.com/sitemap.xml
+
+
